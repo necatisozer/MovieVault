@@ -1,9 +1,8 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.necatisozer.movievault.ui.main.MainViewModel
-import com.necatisozer.movievault.viewmodel.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

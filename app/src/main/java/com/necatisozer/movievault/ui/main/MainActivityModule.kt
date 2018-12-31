@@ -1,6 +1,6 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.ui.main
 
-import com.necatisozer.movievault.MainActivity
+import com.necatisozer.movievault.app.FragmentBuildersModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.app
 
 import com.necatisozer.movievault.ui.main.MainFragment
 import dagger.Module

@@ -1,8 +1,8 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.app
 
 import android.app.Application
-import com.necatisozer.movievault.App
-import com.necatisozer.movievault.data.source.remote.NetworkModule
+import com.necatisozer.movievault.data.repository.RepositoryModule
+import com.necatisozer.movievault.ui.main.MainActivityModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -13,7 +13,7 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
-        NetworkModule::class,
+        RepositoryModule::class,
         MainActivityModule::class]
 )
 interface AppComponent {

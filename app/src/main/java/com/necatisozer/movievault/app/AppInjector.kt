@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.app
 
 import android.app.Activity
 import android.app.Application
@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import com.necatisozer.movievault.App
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector

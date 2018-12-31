@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

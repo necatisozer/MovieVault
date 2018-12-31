@@ -1,8 +1,9 @@
-package com.necatisozer.movievault
+package com.necatisozer.movievault.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.necatisozer.movievault.R
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject

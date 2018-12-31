@@ -1,13 +1,11 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.app
 
 import android.content.Context
-import com.necatisozer.movievault.App
 import com.necatisozer.movievault.BuildConfig
+import com.necatisozer.movievault.viewmodel.ViewModelModule
 import dagger.Module
 import dagger.Provides
-import java.io.File
 import javax.inject.Qualifier
-import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
 class AppModule {
@@ -16,10 +14,10 @@ class AppModule {
     @ApplicationContext
     fun provideContext(application: App): Context = application.applicationContext
 
-    @Provides
+    /*@Provides
     @Singleton
     @CacheDir
-    fun provideCacheDir(application: App): File = application.cacheDir
+    fun provideCacheDir(application: App): File = application.cacheDir*/
 
     @Provides
     @TmdbApiKey

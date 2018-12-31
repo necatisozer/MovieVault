@@ -1,17 +1,18 @@
 package com.necatisozer.movievault.data.source.remote.tmdb
 
-import com.necatisozer.movievault.di.CacheDir
-import com.necatisozer.movievault.di.TmdbApiKey
+import com.necatisozer.movievault.app.TmdbApiKey
+import com.necatisozer.movievault.data.source.remote.DateAdapter
+import com.necatisozer.movievault.data.source.remote.StatusAdapter
+import com.serjltt.moshi.adapters.Wrapped
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.io.File
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Qualifier
@@ -44,13 +45,13 @@ class TmdbModule {
     @Provides
     @Singleton
     @TmdbClient
-    fun provideTmdbClient(
-        @CacheDir cacheDir: String,
+    fun provideOkHttpClient(
+        //@CacheDir cacheDir: File,
         @TmdbRequestInterceptor requestInterceptor: Interceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-            .cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
+            //.cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
             .addInterceptor(requestInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .connectTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
@@ -59,12 +60,22 @@ class TmdbModule {
             .build()
     }
 
-    @Singleton
     @Provides
-    fun provideTmdbApi(@TmdbClient okHttpClient: OkHttpClient): TmdbApi {
+    @Singleton
+    fun provideMoshi(): Moshi {
+        return Moshi.Builder()
+            .add(Wrapped.ADAPTER_FACTORY)
+            .add(DateAdapter())
+            .add(StatusAdapter())
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTmdbApi(@TmdbClient okHttpClient: OkHttpClient, moshi: Moshi): TmdbApi {
         return Retrofit.Builder()
             .baseUrl(API_BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
@@ -81,11 +92,11 @@ class TmdbModule {
         val YOUTUBE_VIDEO_URL = "http://www.youtube.com/watch?v=%1\$s"
         val YOUTUBE_THUMBNAIL_URL = "http://img.youtube.com/vi/%1\$s/0.jpg"
 
-        fun getPosterPath(posterPath: String): String {
+        fun getPosterUrl(posterPath: String): String {
             return BASE_POSTER_PATH + posterPath
         }
 
-        fun getBackdropPath(backdropPath: String): String {
+        fun getBackdropUrl(backdropPath: String): String {
             return BASR_BACKDROP_PATH + backdropPath
         }
     }

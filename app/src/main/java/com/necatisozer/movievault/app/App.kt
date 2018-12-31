@@ -1,8 +1,9 @@
-package com.necatisozer.movievault
+package com.necatisozer.movievault.app
 
 import android.app.Activity
 import android.app.Application
-import com.necatisozer.movievault.di.AppInjector
+import com.jakewharton.threetenabp.AndroidThreeTen
+import com.necatisozer.movievault.BuildConfig
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import timber.log.Timber
@@ -18,6 +19,7 @@ class App : Application(), HasActivityInjector {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+        AndroidThreeTen.init(this)
         AppInjector.init(this)
     }
 

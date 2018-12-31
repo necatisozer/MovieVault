@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.di
+package com.necatisozer.movievault.app
 
 /**
  * Marks an activity / fragment injectable.
