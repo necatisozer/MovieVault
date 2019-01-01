@@ -26,20 +26,18 @@ class TmdbModule {
 
     @Provides
     @Singleton
-    @TmdbRequestInterceptor
-    fun provideRequestInterceptor(@TmdbApiKey apiKey: String): Interceptor {
-        return Interceptor { chain ->
-            val originalRequest = chain.request()
+    @TmdbInterceptor
+    fun provideRequestInterceptor(@TmdbApiKey apiKey: String) = Interceptor { chain ->
+        val originalRequest = chain.request()
 
-            val url = originalRequest.url().newBuilder()
-                .addQueryParameter("api_key", apiKey)
-                .addQueryParameter("language", Locale.getDefault().toLanguageTag())
-                .addQueryParameter("region", Locale.getDefault().country)
-                .build()
+        val url = originalRequest.url().newBuilder()
+            .addQueryParameter("api_key", apiKey)
+            .addQueryParameter("language", Locale.getDefault().toLanguageTag())
+            .addQueryParameter("region", Locale.getDefault().country)
+            .build()
 
-            val request = originalRequest.newBuilder().url(url).build()
-            chain.proceed(request)
-        }
+        val request = originalRequest.newBuilder().url(url).build()
+        chain.proceed(request)
     }
 
     @Provides
@@ -47,40 +45,40 @@ class TmdbModule {
     @TmdbClient
     fun provideOkHttpClient(
         //@CacheDir cacheDir: File,
-        @TmdbRequestInterceptor requestInterceptor: Interceptor,
+        @TmdbInterceptor requestInterceptor: Interceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
-    ): OkHttpClient {
-        return OkHttpClient.Builder()
-            //.cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
-            .addInterceptor(requestInterceptor)
-            .addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
-            .readTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
-            .writeTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
-            .build()
-    }
+    ) = OkHttpClient.Builder()
+        //.cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
+        .addInterceptor(requestInterceptor)
+        .addInterceptor(httpLoggingInterceptor)
+        .connectTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
+        .writeTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
+        .build()
 
     @Provides
     @Singleton
-    fun provideMoshi(): Moshi {
-        return Moshi.Builder()
-            .add(Wrapped.ADAPTER_FACTORY)
-            .add(DateAdapter())
-            .add(StatusAdapter())
-            .build()
-    }
+    @TmdbMoshi
+    fun provideMoshi() = Moshi.Builder()
+        .add(Wrapped.ADAPTER_FACTORY)
+        .add(DateAdapter())
+        .add(StatusAdapter())
+        .build()
 
     @Provides
     @Singleton
-    fun provideTmdbApi(@TmdbClient okHttpClient: OkHttpClient, moshi: Moshi): TmdbApi {
-        return Retrofit.Builder()
+    @TmdbRetrofit
+    fun provideRetrofit(@TmdbClient okHttpClient: OkHttpClient, @TmdbMoshi moshi: Moshi) =
+        Retrofit.Builder()
             .baseUrl(API_BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(TmdbApi::class.java)
-    }
+
+    @Provides
+    @Singleton
+    fun provideTmdbApi(@TmdbRetrofit retrofit: Retrofit) = retrofit.create(TmdbApi::class.java)
 
     companion object ApiPaths {
         val API_HOST = "api.themoviedb.org"
@@ -104,8 +102,16 @@ class TmdbModule {
 
 @Qualifier
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation class TmdbRequestInterceptor
+annotation class TmdbInterceptor
 
 @Qualifier
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class TmdbClient
+
+@Qualifier
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+annotation class TmdbMoshi
+
+@Qualifier
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+annotation class TmdbRetrofit

@@ -8,24 +8,16 @@ import org.threeten.bp.format.DateTimeFormatter
 
 class DateAdapter {
     @ToJson
-    fun toJson(date: LocalDate): String {
-        return DateTimeFormatter.ISO_LOCAL_DATE.format(date)
-    }
+    fun toJson(date: LocalDate) = DateTimeFormatter.ISO_LOCAL_DATE.format(date)
 
     @FromJson
-    fun fromJson(date: String): LocalDate {
-        return LocalDate.parse(date, DateTimeFormatter.ISO_LOCAL_DATE)
-    }
+    fun fromJson(date: String) = LocalDate.parse(date, DateTimeFormatter.ISO_LOCAL_DATE)
 }
 
 class StatusAdapter {
     @ToJson
-    fun toJson(status: Movie.Status): String {
-        return status.value
-    }
+    fun toJson(status: Movie.Status) = status.value
 
     @FromJson
-    fun fromJson(status: String): Movie.Status {
-        return Movie.Status.valueOf(status)
-    }
+    fun fromJson(status: String) = Movie.Status.valueOf(status)
 }

@@ -6,13 +6,10 @@ import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
 
-@Module(includes = [RepositoryModule.BindsModule::class, RemoteDataSourceModule::class, LocalDataSourceModule::class])
-class RepositoryModule {
+@Module(includes = [RemoteDataSourceModule::class, LocalDataSourceModule::class])
+interface RepositoryModule {
 
-    @Module
-    interface BindsModule {
-        @Binds
-        @Singleton
-        fun bind(prodMovieRepository: ProdMovieRepository): MovieRepository
-    }
+    @Binds
+    @Singleton
+    fun bind(prodMovieRepository: ProdMovieRepository): MovieRepository
 }

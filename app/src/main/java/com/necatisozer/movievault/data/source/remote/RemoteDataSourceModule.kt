@@ -1,7 +1,7 @@
 package com.necatisozer.movievault.data.source.remote
 
-import com.necatisozer.movievault.BuildConfig
 import com.necatisozer.movievault.data.source.remote.tmdb.TmdbModule
+import com.necatisozer.movievault.utils.debug
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -13,12 +13,8 @@ class RemoteDataSourceModule {
 
     @Provides
     @Singleton
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().apply {
-            if (BuildConfig.DEBUG) {
-                level = HttpLoggingInterceptor.Level.BODY
-            }
-        }
+    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
+        debug { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Module
