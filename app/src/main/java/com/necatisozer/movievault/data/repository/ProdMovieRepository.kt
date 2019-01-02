@@ -10,7 +10,12 @@ class ProdMovieRepository @Inject constructor(
     private val localDataSource: LocalDataSource
 ) : MovieRepository {
     override fun getPopularMovies() =
-        Observable.concat(remoteDataSource.getPopularMovies(), localDataSource.getPopularMovies())
+        Observable.concat(
+            localDataSource.getPopularMovies(),
+            remoteDataSource.getPopularMovies().doOnNext {
+                localDataSource.putPopularMovies(it)
+            }
+        )
 
     override fun getNowPlayingMovies() = Observable.concat(
         remoteDataSource.getNowPlayingMovies(),

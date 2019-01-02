@@ -6,5 +6,6 @@ import io.reactivex.Observable
 
 interface LocalDataSource : DataSource {
     fun getPopularMovies(): Observable<List<Movie>>
+    fun putPopularMovies(popularMovies: List<Movie>)
     fun getNowPlayingMovies(): Observable<List<Movie>>
 }

@@ -12,5 +12,12 @@ class ProdLocalDataSource @Inject constructor(
 
     override fun getPopularMovies() = Observable.just(movieBox.all)
 
+    override fun putPopularMovies(popularMovies: List<Movie>) {
+        movieBox.apply {
+            removeAll()
+            put(popularMovies)
+        }
+    }
+
     override fun getNowPlayingMovies() = Observable.just(movieBox.all)
 }
