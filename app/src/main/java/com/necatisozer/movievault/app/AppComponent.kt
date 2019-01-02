@@ -5,18 +5,21 @@ import com.necatisozer.movievault.data.repository.RepositoryModule
 import com.necatisozer.movievault.ui.main.MainActivityModule
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
-        AndroidInjectionModule::class,
         AppModule::class,
         RepositoryModule::class,
-        MainActivityModule::class]
+        MainActivityModule::class,
+        AndroidSupportInjectionModule::class
+    ]
 )
 interface AppComponent {
+    fun inject(app: App)
+
     @Component.Builder
     interface Builder {
         @BindsInstance
@@ -24,6 +27,4 @@ interface AppComponent {
 
         fun build(): AppComponent
     }
-
-    fun inject(app: App)
 }

@@ -10,17 +10,16 @@ import javax.inject.Singleton
 
 @Module(includes = [TmdbModule::class, RemoteDataSourceModule.BindsModule::class])
 class RemoteDataSourceModule {
-
-    @Provides
     @Singleton
+    @Provides
     fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
         debug { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Module
     interface BindsModule {
-        @Binds
         @Singleton
-        fun bind(prodRemoteDataSource: ProdRemoteDataSource): RemoteDataSource
+        @Binds
+        fun bindRemoteDataSource(prodRemoteDataSource: ProdRemoteDataSource): RemoteDataSource
     }
 }

@@ -8,8 +8,7 @@ import javax.inject.Singleton
 
 @Module(includes = [RemoteDataSourceModule::class, LocalDataSourceModule::class])
 interface RepositoryModule {
-
-    @Binds
     @Singleton
-    fun bind(prodMovieRepository: ProdMovieRepository): MovieRepository
+    @Binds
+    fun bindMovieRepository(prodMovieRepository: ProdMovieRepository): MovieRepository
 }

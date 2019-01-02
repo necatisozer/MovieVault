@@ -20,12 +20,11 @@ import javax.inject.Singleton
 
 @Module
 class TmdbModule {
-
     val TIMEOUT_IN_SECONDS: Long = 30
     val CACHE_SIZE_IN_BYTES: Long = 10 * 1024 * 1024
 
-    @Provides
     @Singleton
+    @Provides
     @TmdbInterceptor
     fun provideRequestInterceptor(@TmdbApiKey apiKey: String) = Interceptor { chain ->
         val originalRequest = chain.request()
@@ -40,8 +39,8 @@ class TmdbModule {
         chain.proceed(request)
     }
 
-    @Provides
     @Singleton
+    @Provides
     @TmdbClient
     fun provideOkHttpClient(
         //@CacheDir cacheDir: File,
@@ -56,8 +55,8 @@ class TmdbModule {
         .writeTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
         .build()
 
-    @Provides
     @Singleton
+    @Provides
     @TmdbMoshi
     fun provideMoshi() = Moshi.Builder()
         .add(Wrapped.ADAPTER_FACTORY)
@@ -65,8 +64,8 @@ class TmdbModule {
         .add(StatusAdapter())
         .build()
 
-    @Provides
     @Singleton
+    @Provides
     @TmdbRetrofit
     fun provideRetrofit(@TmdbClient okHttpClient: OkHttpClient, @TmdbMoshi moshi: Moshi) =
         Retrofit.Builder()
@@ -76,8 +75,8 @@ class TmdbModule {
             .client(okHttpClient)
             .build()
 
-    @Provides
     @Singleton
+    @Provides
     fun provideTmdbApi(@TmdbRetrofit retrofit: Retrofit) = retrofit.create(TmdbApi::class.java)
 
     companion object ApiPaths {
