@@ -5,6 +5,7 @@ import android.content.Context
 import com.necatisozer.movievault.BuildConfig
 import com.necatisozer.movievault.app.appinitializers.AndroidThreeTenInitializer
 import com.necatisozer.movievault.app.appinitializers.AppInitializer
+import com.necatisozer.movievault.app.appinitializers.StethoInitializer
 import com.necatisozer.movievault.app.appinitializers.TimberInitializer
 import com.necatisozer.movievault.utils.Logger
 import com.necatisozer.movievault.utils.TimberLogger
@@ -55,6 +56,10 @@ class AppModule {
         @Binds
         @IntoSet
         fun bindTimberInitializer(timberInitializer: TimberInitializer): AppInitializer
+
+        @Binds
+        @IntoSet
+        fun bindStethoInitializer(stethoInitializer: StethoInitializer): AppInitializer
     }
 }
 

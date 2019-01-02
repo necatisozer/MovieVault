@@ -1,5 +1,6 @@
 package com.necatisozer.movievault.data.source.remote.tmdb
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.necatisozer.movievault.app.CacheDir
 import com.necatisozer.movievault.app.TmdbApiKey
 import com.necatisozer.movievault.data.source.remote.DateAdapter
@@ -53,6 +54,7 @@ class TmdbModule {
         .cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
         .addInterceptor(requestInterceptor)
         .addInterceptor(httpLoggingInterceptor)
+        .addNetworkInterceptor(StethoInterceptor())
         .connectTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
         .readTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
         .writeTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
