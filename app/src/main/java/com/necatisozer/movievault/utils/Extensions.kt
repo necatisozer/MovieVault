@@ -8,19 +8,19 @@ import android.view.ViewGroup
 import android.widget.EditText
 import com.necatisozer.movievault.BuildConfig
 
-inline operator fun ViewGroup.plusAssign(child: View) = addView(child)
-inline operator fun ViewGroup.minusAssign(child: View) = removeView(child)
+operator fun ViewGroup.plusAssign(child: View) = addView(child)
+operator fun ViewGroup.minusAssign(child: View) = removeView(child)
 
 inline fun debug(body: () -> Unit) {
     if (BuildConfig.DEBUG) body()
 }
 
-inline fun supportsVersion(version: Int, body: () -> Unit) {
+inline fun targetApi(version: Int, body: () -> Unit) {
     if (Build.VERSION.SDK_INT >= version) body.invoke()
 }
 
 // hashCode() for Nullable types
-inline fun Any?.hashCode(): Int = this?.hashCode() ?: 0
+fun Any?.hashCode(): Int = this?.hashCode() ?: 0
 
 inline fun EditText.afterTextChanged(crossinline listener: (String) -> Unit) {
     addTextChangedListener(object : TextWatcher {

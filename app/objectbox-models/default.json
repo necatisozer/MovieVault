@@ -1,0 +1,74 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1038985602049837291",
+      "lastPropertyId": "12:1345271321815930129",
+      "name": "Movie",
+      "properties": [
+        {
+          "id": "1:7026774859825195969",
+          "name": "id"
+        },
+        {
+          "id": "2:3705796398450453877",
+          "name": "adult"
+        },
+        {
+          "id": "3:8707012760345809300",
+          "name": "backdropUrl"
+        },
+        {
+          "id": "4:7677291529168079025",
+          "name": "genres"
+        },
+        {
+          "id": "5:9112433275586641464",
+          "name": "originalLanguage"
+        },
+        {
+          "id": "6:5834766835740987083",
+          "name": "originalTitle"
+        },
+        {
+          "id": "7:1500281488877825606",
+          "name": "overview"
+        },
+        {
+          "id": "8:4050227183540142264",
+          "name": "posterUrl"
+        },
+        {
+          "id": "9:5389468923623124555",
+          "name": "releaseDate"
+        },
+        {
+          "id": "10:714581188132649751",
+          "name": "title"
+        },
+        {
+          "id": "11:4385448577783176789",
+          "name": "voteAverage"
+        },
+        {
+          "id": "12:1345271321815930129",
+          "name": "voteCount"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:1038985602049837291",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

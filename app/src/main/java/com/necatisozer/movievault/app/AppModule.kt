@@ -13,6 +13,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoSet
+import java.io.File
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
@@ -26,14 +27,13 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @ApplicationContext
-    fun provideContext(application: App): Context = application.applicationContext
+    fun provideApplicationContext(application: Application): Context =
+        application.applicationContext
 
-    /*
     @Singleton
     @Provides
     @CacheDir
-    fun provideCacheDir(application: App): File = application.cacheDir
-    */
+    fun provideCacheDir(application: Application): File = application.cacheDir
 
     @Provides
     @TmdbApiKey
@@ -41,9 +41,6 @@ class AppModule {
 
     @Module
     interface Declerations {
-        @Binds
-        fun bindApplication(app: App): Application
-
         @Singleton
         @Binds
         fun bindLogger(timberLogger: TimberLogger): Logger

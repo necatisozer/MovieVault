@@ -8,7 +8,7 @@ import dagger.Provides
 import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
 
-@Module(includes = [TmdbModule::class, RemoteDataSourceModule.BindsModule::class])
+@Module(includes = [TmdbModule::class, RemoteDataSourceModule.Declerations::class])
 class RemoteDataSourceModule {
     @Singleton
     @Provides
@@ -17,7 +17,7 @@ class RemoteDataSourceModule {
     }
 
     @Module
-    interface BindsModule {
+    interface Declerations {
         @Singleton
         @Binds
         fun bindRemoteDataSource(prodRemoteDataSource: ProdRemoteDataSource): RemoteDataSource

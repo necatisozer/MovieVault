@@ -1,7 +1,7 @@
 package com.necatisozer.movievault.data.source.local
 
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.data.source.DataSource
+import com.necatisozer.movievault.data.source.local.objectbox.entity.Movie
 import io.reactivex.Observable
 
 interface LocalDataSource : DataSource {

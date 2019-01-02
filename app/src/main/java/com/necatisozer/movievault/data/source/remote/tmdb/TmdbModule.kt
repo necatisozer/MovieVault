@@ -1,5 +1,6 @@
 package com.necatisozer.movievault.data.source.remote.tmdb
 
+import com.necatisozer.movievault.app.CacheDir
 import com.necatisozer.movievault.app.TmdbApiKey
 import com.necatisozer.movievault.data.source.remote.DateAdapter
 import com.necatisozer.movievault.data.source.remote.StatusAdapter
@@ -7,12 +8,14 @@ import com.serjltt.moshi.adapters.Wrapped
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
+import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.io.File
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 import javax.inject.Qualifier
@@ -43,11 +46,11 @@ class TmdbModule {
     @Provides
     @TmdbClient
     fun provideOkHttpClient(
-        //@CacheDir cacheDir: File,
+        @CacheDir cacheDir: File,
         @TmdbInterceptor requestInterceptor: Interceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
     ) = OkHttpClient.Builder()
-        //.cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
+        .cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
         .addInterceptor(requestInterceptor)
         .addInterceptor(httpLoggingInterceptor)
         .connectTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
