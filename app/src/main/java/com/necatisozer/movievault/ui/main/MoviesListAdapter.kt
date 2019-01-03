@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.necatisozer.movievault.data.source.local.objectbox.entity.Movie
-import com.necatisozer.movievault.databinding.MoviesListItemBinding
+import com.necatisozer.movievault.databinding.MovieListItemBinding
 import com.squareup.picasso.Picasso
 
 class MoviesListAdapter(private val activity: Activity) :
@@ -18,7 +18,7 @@ class MoviesListAdapter(private val activity: Activity) :
         viewType: Int
     ): MoviesListAdapter.CustomViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val itemBinding = MoviesListItemBinding.inflate(layoutInflater, parent, false)
+        val itemBinding = MovieListItemBinding.inflate(layoutInflater, parent, false)
         return CustomViewHolder(itemBinding)
     }
 
@@ -40,7 +40,7 @@ class MoviesListAdapter(private val activity: Activity) :
         holder.bindTo(getItem(position))
     }
 
-    inner class CustomViewHolder(private val binding: MoviesListItemBinding) :
+    inner class CustomViewHolder(private val binding: MovieListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         init {
 
