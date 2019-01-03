@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 
 class MoviesListAdapter(private val activity: Activity) :
     RecyclerView.Adapter<MoviesListAdapter.CustomViewHolder>() {
-    private var movies: MutableList<Movie> = mutableListOf()
+    private var movies: List<Movie> = emptyList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -23,9 +23,8 @@ class MoviesListAdapter(private val activity: Activity) :
     }
 
     fun setItems(movies: List<Movie>) {
-        val startPosition = this.movies.size
-        this.movies.addAll(movies)
-        notifyItemRangeChanged(startPosition, movies.size)
+        this.movies = movies
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
