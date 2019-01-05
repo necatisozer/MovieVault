@@ -17,7 +17,8 @@ class MainViewModel @Inject constructor(
     internal val movieListLiveData = MutableLiveData<List<Movie>>()
 
     fun init() {
-        subscription(movieRepository.getPopularMovies().subscribeOn(Schedulers.io())
+        subscription(
+            movieRepository.getNowPlayingMovies().subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribeBy(
                 onNext = { movieListLiveData.value = it },
                 onError = { logger.w(it) }

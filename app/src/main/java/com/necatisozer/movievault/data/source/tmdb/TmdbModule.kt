@@ -1,8 +1,8 @@
 package com.necatisozer.movievault.data.source.tmdb
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.necatisozer.movievault.BuildConfig
 import com.necatisozer.movievault.app.CacheDir
-import com.necatisozer.movievault.app.TmdbApiKey
 import com.necatisozer.movievault.utils.debug
 import com.serjltt.moshi.adapters.Wrapped
 import com.squareup.moshi.Moshi
@@ -29,11 +29,11 @@ class TmdbModule {
     @Singleton
     @Provides
     @TmdbInterceptor
-    fun provideRequestInterceptor(@TmdbApiKey apiKey: String) = Interceptor { chain ->
+    fun provideRequestInterceptor() = Interceptor { chain ->
         val originalRequest = chain.request()
 
         val url = originalRequest.url().newBuilder()
-            .addQueryParameter("api_key", apiKey)
+            .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
             .addQueryParameter("language", Locale.getDefault().toLanguageTag())
             .addQueryParameter("region", Locale.getDefault().country)
             .build()

@@ -127,3 +127,6 @@
 
 # for DexGuard only
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+### RxPaper ###
+-keep class * implements com.necatisozer.movievault.data.repository.entity.Entity { *; }

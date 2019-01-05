@@ -2,9 +2,9 @@ package com.necatisozer.movievault.app
 
 import android.app.Application
 import android.content.Context
-import com.necatisozer.movievault.BuildConfig
 import com.necatisozer.movievault.app.appinitializers.AndroidThreeTenInitializer
 import com.necatisozer.movievault.app.appinitializers.AppInitializer
+import com.necatisozer.movievault.app.appinitializers.RxPaperInitializer
 import com.necatisozer.movievault.app.appinitializers.StethoInitializer
 import com.necatisozer.movievault.app.appinitializers.TimberInitializer
 import com.necatisozer.movievault.utils.Logger
@@ -36,10 +36,6 @@ class AppModule {
     @CacheDir
     fun provideCacheDir(application: Application): File = application.cacheDir
 
-    @Provides
-    @TmdbApiKey
-    fun provideTmdbApiKey(): String = BuildConfig.TMDB_API_KEY
-
     @Module
     interface Declerations {
         @Singleton
@@ -60,6 +56,10 @@ class AppModule {
         @Binds
         @IntoSet
         fun bindStethoInitializer(stethoInitializer: StethoInitializer): AppInitializer
+
+        @Binds
+        @IntoSet
+        fun bindRxPaperInitializer(rxPaperInitializer: RxPaperInitializer): AppInitializer
     }
 }
 
@@ -70,7 +70,3 @@ annotation class ApplicationContext
 @Qualifier
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class CacheDir
-
-@Qualifier
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation class TmdbApiKey

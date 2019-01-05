@@ -20,3 +20,5 @@ fun MovieResults.Result.mapToMovieEntity() =
         voteAverage = vote_average,
         voteCount = vote_count
     )
+
+fun MovieResults.mapToMovieList() = results.map { it.mapToMovieEntity() }
