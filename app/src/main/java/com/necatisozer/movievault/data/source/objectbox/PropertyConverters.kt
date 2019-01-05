@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.data.source.local.objectbox
+package com.necatisozer.movievault.data.source.objectbox
 
 import io.objectbox.converter.PropertyConverter
 import org.threeten.bp.LocalDate

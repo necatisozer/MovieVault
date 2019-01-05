@@ -1,6 +1,6 @@
-package com.necatisozer.movievault.data.source.remote
+package com.necatisozer.movievault.data.source.tmdb
 
-import com.necatisozer.movievault.data.source.remote.tmdb.dto.Movie
+import com.necatisozer.movievault.data.source.tmdb.entity.Movie
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 import org.threeten.bp.LocalDate

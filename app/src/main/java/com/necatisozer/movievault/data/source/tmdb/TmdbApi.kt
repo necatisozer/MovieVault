@@ -1,9 +1,9 @@
-package com.necatisozer.movievault.data.source.remote.tmdb
+package com.necatisozer.movievault.data.source.tmdb
 
-import com.necatisozer.movievault.data.source.remote.tmdb.dto.Configurations
-import com.necatisozer.movievault.data.source.remote.tmdb.dto.Jobs
-import com.necatisozer.movievault.data.source.remote.tmdb.dto.Movie
-import com.necatisozer.movievault.data.source.remote.tmdb.dto.MovieResults
+import com.necatisozer.movievault.data.source.tmdb.entity.Configurations
+import com.necatisozer.movievault.data.source.tmdb.entity.Jobs
+import com.necatisozer.movievault.data.source.tmdb.entity.Movie
+import com.necatisozer.movievault.data.source.tmdb.entity.MovieResults
 import com.serjltt.moshi.adapters.Wrapped
 import io.reactivex.Single
 import retrofit2.http.GET

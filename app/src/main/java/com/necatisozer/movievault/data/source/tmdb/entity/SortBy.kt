@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.data.source.remote.tmdb.dto
+package com.necatisozer.movievault.data.source.tmdb.entity
 
 enum class SortBy(val value: String) {
     POPULARITY_ASC("popularity.asc"),

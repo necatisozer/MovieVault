@@ -1,13 +1,12 @@
-package com.necatisozer.movievault.data.source.remote.tmdb.dto
+package com.necatisozer.movievault.data.source.tmdb.entity
 
-import com.necatisozer.movievault.data.source.remote.Dto
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Configurations(
     val change_keys: List<String>,
     val images: Images
-) : Dto {
+) : TmdbEntity {
     @JsonClass(generateAdapter = true)
     data class Images(
         val backdrop_sizes: List<String>,
@@ -17,5 +16,5 @@ data class Configurations(
         val profile_sizes: List<String>,
         val secure_base_url: String,
         val still_sizes: List<String>
-    ) : Dto
+    ) : TmdbEntity
 }

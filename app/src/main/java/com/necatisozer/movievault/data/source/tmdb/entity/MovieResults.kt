@@ -1,6 +1,5 @@
-package com.necatisozer.movievault.data.source.remote.tmdb.dto
+package com.necatisozer.movievault.data.source.tmdb.entity
 
-import com.necatisozer.movievault.data.source.remote.Dto
 import com.squareup.moshi.JsonClass
 import org.threeten.bp.LocalDate
 
@@ -10,7 +9,7 @@ data class MovieResults(
     val results: List<Result>,
     val total_pages: Int,
     val total_results: Int
-) : Dto {
+) : TmdbEntity {
     @JsonClass(generateAdapter = true)
     data class Result(
         val adult: Boolean,
@@ -27,5 +26,5 @@ data class MovieResults(
         val video: Boolean,
         val vote_average: Double,
         val vote_count: Int
-    ) : Dto
+    ) : TmdbEntity
 }

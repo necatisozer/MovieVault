@@ -1,10 +1,9 @@
-package com.necatisozer.movievault.data.source.remote.tmdb
+package com.necatisozer.movievault.data.source.tmdb
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.necatisozer.movievault.app.CacheDir
 import com.necatisozer.movievault.app.TmdbApiKey
-import com.necatisozer.movievault.data.source.remote.DateAdapter
-import com.necatisozer.movievault.data.source.remote.StatusAdapter
+import com.necatisozer.movievault.utils.debug
 import com.serjltt.moshi.adapters.Wrapped
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -41,6 +40,12 @@ class TmdbModule {
 
         val request = originalRequest.newBuilder().url(url).build()
         chain.proceed(request)
+    }
+
+    @Singleton
+    @Provides
+    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
+        debug { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Singleton
@@ -82,7 +87,9 @@ class TmdbModule {
 
     @Singleton
     @Provides
-    fun provideTmdbApi(@TmdbRetrofit retrofit: Retrofit) = retrofit.create(TmdbApi::class.java)
+    fun provideTmdbApi(@TmdbRetrofit retrofit: Retrofit) = retrofit.create(
+        TmdbApi::class.java
+    )
 
     companion object ApiPaths {
         val API_HOST = "api.themoviedb.org"

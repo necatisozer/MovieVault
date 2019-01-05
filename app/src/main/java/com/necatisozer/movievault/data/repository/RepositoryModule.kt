@@ -1,14 +1,13 @@
 package com.necatisozer.movievault.data.repository
 
-import com.necatisozer.movievault.data.source.local.LocalDataSourceModule
-import com.necatisozer.movievault.data.source.remote.RemoteDataSourceModule
+import com.necatisozer.movievault.data.source.tmdb.TmdbModule
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
 
-@Module(includes = [RemoteDataSourceModule::class, LocalDataSourceModule::class])
+@Module(includes = [TmdbModule::class])
 interface RepositoryModule {
     @Singleton
     @Binds
-    fun bindMovieRepository(prodMovieRepository: ProdMovieRepository): MovieRepository
+    fun bindTmdbApi(prodMovieRepository: ProdMovieRepository): MovieRepository
 }

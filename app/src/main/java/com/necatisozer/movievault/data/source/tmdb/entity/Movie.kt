@@ -1,6 +1,5 @@
-package com.necatisozer.movievault.data.source.remote.tmdb.dto
+package com.necatisozer.movievault.data.source.tmdb.entity
 
-import com.necatisozer.movievault.data.source.remote.Dto
 import com.squareup.moshi.JsonClass
 import org.threeten.bp.LocalDate
 
@@ -33,19 +32,19 @@ data class Movie(
     val videos: Videos,
     val vote_average: Double,
     val vote_count: Int
-) : Dto {
+) : TmdbEntity {
     @JsonClass(generateAdapter = true)
     data class ProductionCompany(
         val id: Int,
         val logo_path: String?,
         val name: String,
         val origin_country: String
-    ) : Dto
+    ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)
     data class Videos(
         val results: List<Result>
-    ) : Dto {
+    ) : TmdbEntity {
         @JsonClass(generateAdapter = true)
         data class Result(
             val id: String,
@@ -56,7 +55,7 @@ data class Movie(
             val site: String,
             val size: Int,
             val type: String
-        ) : Dto
+        ) : TmdbEntity
     }
 
     @JsonClass(generateAdapter = true)
@@ -65,31 +64,31 @@ data class Movie(
         val id: Int,
         val name: String,
         val poster_path: String
-    ) : Dto
+    ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)
     data class ProductionCountry(
         val iso_3166_1: String,
         val name: String
-    ) : Dto
+    ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)
     data class Images(
         val backdrops: List<String>,
         val posters: List<String>
-    ) : Dto
+    ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)
     data class Genre(
         val id: Int,
         val name: String
-    ) : Dto
+    ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)
     data class SpokenLanguage(
         val iso_639_1: String,
         val name: String
-    ) : Dto
+    ) : TmdbEntity
 
     enum class Status(val value: String) {
         RUMORED("Rumored"),

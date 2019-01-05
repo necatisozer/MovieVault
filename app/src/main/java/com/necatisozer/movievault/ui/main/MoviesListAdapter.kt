@@ -5,7 +5,7 @@ import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.necatisozer.movievault.data.source.local.objectbox.entity.Movie
+import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieListItemBinding
 import com.squareup.picasso.Picasso
 
