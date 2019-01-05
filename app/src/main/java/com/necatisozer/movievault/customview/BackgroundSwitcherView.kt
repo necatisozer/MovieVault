@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.widget
+package com.necatisozer.movievault.customview
 
 import android.animation.Animator
 import android.content.Context

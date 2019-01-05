@@ -107,6 +107,9 @@ dependencies {
     // Date-Time
     implementation "com.jakewharton.threetenabp:threetenabp:1.1.1"
 
+    // Custom View
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
     // Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         tools:context=".ui.main.MainFragment">
 
-        <com.necatisozer.movievault.widget.BackgroundSwitcherView
+        <com.necatisozer.movievault.customview.BackgroundSwitcherView
             android:background="@color/search_overlay"
             android:id="@+id/overlay_layout"
             android:layout_height="0dp"
@@ -19,10 +19,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.yarolegovich.discretescrollview.DiscreteScrollView
             android:id="@+id/movies_list"
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
