@@ -1,12 +1,20 @@
 package com.necatisozer.movievault.ui.main
 
-import com.necatisozer.movievault.app.FragmentBuildersModule
+import androidx.lifecycle.ViewModel
+import com.necatisozer.movievault.ui.main.movielist.MovieListModule
+import com.necatisozer.movievault.utils.ViewModelKey
+import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import dagger.multibindings.IntoMap
 
-@Suppress("unused")
 @Module
 abstract class MainActivityModule {
-    @ContributesAndroidInjector(modules = [FragmentBuildersModule::class])
-    abstract fun contributeMainActivity(): MainActivity
+    @ContributesAndroidInjector(modules = [MovieListModule::class])
+    abstract fun bindMainActivity(): MainActivity
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MainViewModel::class)
+    abstract fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
 }

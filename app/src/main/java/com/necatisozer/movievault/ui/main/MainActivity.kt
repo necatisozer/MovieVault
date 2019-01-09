@@ -1,23 +1,9 @@
 package com.necatisozer.movievault.ui.main
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.necatisozer.movievault.R
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
-import javax.inject.Inject
+import com.necatisozer.movievault.databinding.MainActivityBinding
+import com.necatisozer.movievault.ui.base.BaseActivity
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
-
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
-    }
-
-    override fun supportFragmentInjector() = dispatchingAndroidInjector
-
+class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>(MainViewModel::class.java) {
+    override fun getLayoutRes() = R.layout.main_activity
 }

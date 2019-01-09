@@ -1,24 +1,20 @@
 package com.necatisozer.movievault.app
 
-import android.app.Activity
-import android.app.Application
 import com.necatisozer.movievault.app.appinitializers.AppInitializer
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.AndroidInjector
+import dagger.android.support.DaggerApplication
 import javax.inject.Inject
 
-class App : Application(), HasActivityInjector {
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
+class App : DaggerApplication() {
     @Inject
     lateinit var appInitializers: Set<@JvmSuppressWildcards AppInitializer>
 
-    override fun onCreate() {
-        super.onCreate()
-        AppInjector.init(this)
-        appInitializers.forEach { it.init(this) }
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        return DaggerAppComponent.builder().create(this)
     }
 
-    override fun activityInjector() = dispatchingAndroidInjector
+    override fun onCreate() {
+        super.onCreate()
+        appInitializers.forEach { it.init(this) }
+    }
 }

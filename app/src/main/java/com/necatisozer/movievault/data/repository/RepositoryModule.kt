@@ -10,5 +10,5 @@ import javax.inject.Singleton
 interface RepositoryModule {
     @Singleton
     @Binds
-    fun bindTmdbApi(prodMovieRepository: ProdMovieRepository): MovieRepository
+    fun bindMovieRepository(prodMovieRepository: ProdMovieRepository): MovieRepository
 }

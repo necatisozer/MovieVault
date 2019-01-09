@@ -1,10 +1,9 @@
 package com.necatisozer.movievault.app
 
-import android.app.Application
 import com.necatisozer.movievault.data.repository.RepositoryModule
-import com.necatisozer.movievault.ui.main.MainActivityModule
-import dagger.BindsInstance
+import com.necatisozer.movievault.ui.ActivityModule
 import dagger.Component
+import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
@@ -13,18 +12,11 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         RepositoryModule::class,
-        MainActivityModule::class,
+        ActivityModule::class,
         AndroidSupportInjectionModule::class
     ]
 )
-interface AppComponent {
-    fun inject(app: App)
-
+interface AppComponent : AndroidInjector<App> {
     @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): AppComponent
-    }
+    abstract class Builder : AndroidInjector.Builder<App>()
 }

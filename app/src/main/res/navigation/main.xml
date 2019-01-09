@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            app:startDestination="@id/mainFragment">
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/movie_list">
 
-    <fragment android:id="@+id/mainFragment"
-              android:name="com.necatisozer.movievault.ui.main.MainFragment"
-              android:label="MainFragment"/>
+    <fragment
+        android:id="@+id/movie_list"
+        android:label="MovieList"
+        android:name="com.necatisozer.movievault.ui.main.movielist.MovieListFragment" />
 
 </navigation>

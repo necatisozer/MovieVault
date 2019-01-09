@@ -9,7 +9,6 @@ import com.necatisozer.movievault.app.appinitializers.StethoInitializer
 import com.necatisozer.movievault.app.appinitializers.TimberInitializer
 import com.necatisozer.movievault.utils.Logger
 import com.necatisozer.movievault.utils.TimberLogger
-import com.necatisozer.movievault.viewmodel.ViewModelModule
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -21,8 +20,7 @@ import javax.inject.Singleton
 @Module(
     includes = [
         AppModule.Declerations::class,
-        AppModule.Initializers::class,
-        ViewModelModule::class
+        AppModule.Initializers::class
     ]
 )
 class AppModule {

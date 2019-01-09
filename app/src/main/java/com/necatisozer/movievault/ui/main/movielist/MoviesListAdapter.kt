@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.ui.main
+package com.necatisozer.movievault.ui.main.movielist
 
 import android.app.Activity
 import android.util.DisplayMetrics
@@ -16,7 +16,7 @@ class MoviesListAdapter(private val activity: Activity) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MoviesListAdapter.CustomViewHolder {
+    ): CustomViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val itemBinding = MovieListItemBinding.inflate(layoutInflater, parent, false)
         return CustomViewHolder(itemBinding)
@@ -35,7 +35,7 @@ class MoviesListAdapter(private val activity: Activity) :
         return movies[position]
     }
 
-    override fun onBindViewHolder(holder: MoviesListAdapter.CustomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.bindTo(getItem(position))
     }
 
