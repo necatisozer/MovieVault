@@ -7,8 +7,8 @@ import dagger.Module
 import javax.inject.Singleton
 
 @Module(includes = [TmdbModule::class, RxPaperModule::class])
-interface RepositoryModule {
+abstract class RepositoryModule {
     @Singleton
     @Binds
-    fun bindMovieRepository(prodMovieRepository: ProdMovieRepository): MovieRepository
+    abstract fun bindMovieRepository(prodMovieRepository: ProdMovieRepository): MovieRepository
 }

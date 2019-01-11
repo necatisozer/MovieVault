@@ -7,14 +7,11 @@ import com.necatisozer.movievault.databinding.MovieListFragmentBinding
 import com.necatisozer.movievault.ui.base.BaseFragment
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 
-class MovieListFragment :
-    BaseFragment<MovieListViewModel, MovieListFragmentBinding>(
-        MovieListViewModel::class.java
-    ) {
+class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBinding>() {
+    override val layoutRes = R.layout.movie_list_fragment
+    override val viewModelClass = MovieListViewModel::class.java
 
-    private lateinit var moviesListAdapter: MoviesListAdapter
-
-    override fun getLayoutRes(): Int = R.layout.movie_list_fragment
+    private val moviesListAdapter: MoviesListAdapter by lazy { MoviesListAdapter(requireActivity()) }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -23,9 +20,6 @@ class MovieListFragment :
     }
 
     private fun initializeView() {
-        moviesListAdapter =
-            MoviesListAdapter(requireActivity())
-
         binding.apply {
             moviesList.apply {
                 adapter = moviesListAdapter

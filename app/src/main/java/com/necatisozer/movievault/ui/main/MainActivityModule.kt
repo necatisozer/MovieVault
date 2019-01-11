@@ -8,9 +8,9 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
 
-@Module
+@Module(includes = [MovieListModule::class])
 abstract class MainActivityModule {
-    @ContributesAndroidInjector(modules = [MovieListModule::class])
+    @ContributesAndroidInjector
     abstract fun bindMainActivity(): MainActivity
 
     @Binds

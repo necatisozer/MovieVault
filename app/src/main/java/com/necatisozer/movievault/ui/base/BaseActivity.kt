@@ -1,7 +1,6 @@
 package com.necatisozer.movievault.ui.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -10,20 +9,22 @@ import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-abstract class BaseActivity<M : BaseViewModel, B : ViewDataBinding>(private val viewModelClass: Class<M>) :
+abstract class BaseActivity<M : BaseViewModel, B : ViewDataBinding> :
     DaggerAppCompatActivity() {
+
+    @get:LayoutRes
+    protected abstract val layoutRes: Int
+    protected abstract val viewModelClass: Class<M>
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
+
     protected lateinit var viewModel: M
     protected lateinit var binding: B
 
-    @LayoutRes
-    protected abstract fun getLayoutRes(): Int
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        binding = DataBindingUtil.setContentView(this, getLayoutRes())
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, layoutRes)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(viewModelClass)
     }
 }

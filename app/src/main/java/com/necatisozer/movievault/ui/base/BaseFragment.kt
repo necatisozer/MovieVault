@@ -12,28 +12,30 @@ import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-abstract class BaseFragment<M : BaseViewModel, B : ViewDataBinding>(private val viewModelClass: Class<M>) :
+abstract class BaseFragment<M : BaseViewModel, B : ViewDataBinding> :
     DaggerFragment() {
+
+    @get:LayoutRes
+    protected abstract val layoutRes: Int
+    protected abstract val viewModelClass: Class<M>
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
+
     protected lateinit var viewModel: M
     protected lateinit var binding: B
 
-    @LayoutRes
-    protected abstract fun getLayoutRes(): Int
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(viewModelClass)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
+        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(viewModelClass)
     }
 }

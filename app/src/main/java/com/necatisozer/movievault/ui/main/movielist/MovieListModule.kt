@@ -9,7 +9,7 @@ import dagger.multibindings.IntoMap
 
 @Module
 abstract class MovieListModule {
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector
     abstract fun bindMovieListFragment(): MovieListFragment
 
     @Binds

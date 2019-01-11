@@ -25,39 +25,41 @@ import javax.inject.Singleton
 )
 class AppModule {
     @Provides
+    fun provideApplication(application: App): Application = application
+
+    @Provides
     @ApplicationContext
     fun provideApplicationContext(application: Application): Context =
         application.applicationContext
 
-    @Singleton
     @Provides
     @CacheDir
     fun provideCacheDir(application: Application): File = application.cacheDir
 
     @Module
-    interface Declerations {
+    abstract class Declerations {
         @Singleton
         @Binds
-        fun bindLogger(timberLogger: TimberLogger): Logger
+        abstract fun bindLogger(timberLogger: TimberLogger): Logger
     }
 
     @Module
-    interface Initializers {
+    abstract class Initializers {
         @Binds
         @IntoSet
-        fun bindAndroidThreeTenInitializer(androidThreeTenInitializer: AndroidThreeTenInitializer): AppInitializer
+        abstract fun bindAndroidThreeTenInitializer(androidThreeTenInitializer: AndroidThreeTenInitializer): AppInitializer
 
         @Binds
         @IntoSet
-        fun bindTimberInitializer(timberInitializer: TimberInitializer): AppInitializer
+        abstract fun bindTimberInitializer(timberInitializer: TimberInitializer): AppInitializer
 
         @Binds
         @IntoSet
-        fun bindStethoInitializer(stethoInitializer: StethoInitializer): AppInitializer
+        abstract fun bindStethoInitializer(stethoInitializer: StethoInitializer): AppInitializer
 
         @Binds
         @IntoSet
-        fun bindRxPaperInitializer(rxPaperInitializer: RxPaperInitializer): AppInitializer
+        abstract fun bindRxPaperInitializer(rxPaperInitializer: RxPaperInitializer): AppInitializer
     }
 }
 
