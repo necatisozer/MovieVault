@@ -3,6 +3,7 @@ package com.necatisozer.movievault.utils
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
@@ -30,16 +31,13 @@ inline fun EditText.afterTextChanged(crossinline listener: (String) -> Unit) {
             listener(s.toString())
         }
 
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            // Do nothing
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            // Do nothing
-        }
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
     })
 }
 
 fun ImageView.loadUrl(url: String) {
     Glide.with(this).load(url).into(this)
 }
+
+fun ViewGroup.inflater() = LayoutInflater.from(context)
