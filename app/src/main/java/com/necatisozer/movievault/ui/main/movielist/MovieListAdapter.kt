@@ -12,25 +12,26 @@ import com.necatisozer.movievault.ui.base.BaseViewHolder
 import com.necatisozer.movievault.utils.inflater
 import com.necatisozer.movievault.utils.loadUrl
 
-class MovieListAdapter :
-    BaseAdapter<Movie, MovieListViewHolder>() {
+class MovieListAdapter : BaseAdapter<Movie, MovieListViewHolder>() {
     override fun onCreateViewHolder(root: ViewGroup) =
         MovieListViewHolder(MovieListItemBinding.inflate(root.inflater(), root, false))
 }
 
 class MovieListViewHolder(binding: MovieListItemBinding) :
     BaseViewHolder<Movie, MovieListItemBinding>(binding) {
-    private val resources = binding.root.context.resources
-    private val displayMetrics = resources.displayMetrics
+    init {
+        val resources = binding.root.context.resources
+        val displayMetrics = resources.displayMetrics
 
-    override fun bindData(data: Movie) {
         binding.root.updateLayoutParams<RecyclerView.LayoutParams> {
             when (resources.configuration.orientation) {
                 ORIENTATION_PORTRAIT -> width = (displayMetrics.widthPixels * 0.7).toInt()
                 ORIENTATION_LANDSCAPE -> height = (displayMetrics.heightPixels * 0.7).toInt()
             }
         }
+    }
 
+    override fun bindData(data: Movie) {
         data.posterUrl?.let { binding.poster.loadUrl(it) }
     }
 }
