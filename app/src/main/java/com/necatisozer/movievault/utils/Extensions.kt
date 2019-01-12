@@ -6,6 +6,8 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.necatisozer.movievault.BuildConfig
 
 operator fun ViewGroup.plusAssign(child: View) = addView(child)
@@ -36,4 +38,8 @@ inline fun EditText.afterTextChanged(crossinline listener: (String) -> Unit) {
             // Do nothing
         }
     })
+}
+
+fun ImageView.loadUrl(url: String) {
+    Glide.with(this).load(url).into(this)
 }

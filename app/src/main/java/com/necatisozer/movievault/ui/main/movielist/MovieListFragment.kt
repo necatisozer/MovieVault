@@ -11,7 +11,7 @@ class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBind
     override val layoutRes = R.layout.movie_list_fragment
     override val viewModelClass = MovieListViewModel::class.java
 
-    private val moviesListAdapter: MoviesListAdapter by lazy { MoviesListAdapter(requireActivity()) }
+    private val moviesListAdapter: MovieListAdapter by lazy { MovieListAdapter() }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -30,7 +30,7 @@ class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBind
                 var currentPosition: Int = -1
                 addOnItemChangedListener { _, position ->
                     if (currentPosition == position) return@addOnItemChangedListener
-                    val movie = moviesListAdapter.getItem(position)
+                    val movie = moviesListAdapter.currentList.get(position)
                     overlayLayout.updateCurrentBackground(movie.posterUrl)
                     currentPosition = position
                 }
@@ -41,7 +41,7 @@ class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBind
     private fun initializeViewModel() {
         viewModel.apply {
             movieListLiveData.observe(this@MovieListFragment, Observer { movieList ->
-                moviesListAdapter.setItems(movieList)
+                moviesListAdapter.submitList(movieList)
             })
 
             init()
