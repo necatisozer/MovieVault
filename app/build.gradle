@@ -18,7 +18,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -26,14 +29,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    dataBinding {
-        enabled = true
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
     }
-    kapt {
-        arguments {
-            //arg("objectbox.debug", true)
-        }
-    }
+    dataBinding { enabled = true }
+    kapt { /* arguments { arg("objectbox.debug", true) } */ }
 }
 
 dependencies {
@@ -67,14 +67,13 @@ dependencies {
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.5.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.12.1"
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
     implementation "com.squareup.retrofit2:converter-moshi:2.3.0"
 
     // Moshi
     implementation "com.squareup.moshi:moshi:1.8.0"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
     implementation 'com.serjltt.moshi:moshi-lazy-adapters:2.2'
-
 
     // Dagger
     implementation 'com.google.dagger:dagger:2.20'
