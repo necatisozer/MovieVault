@@ -14,3 +14,12 @@ inline fun EditText.afterTextChanged(crossinline listener: (String) -> Unit) {
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
     })
 }
+
+fun EditText.clearBackground() {
+    val paddingBottom = paddingBottom
+    val paddingTop = paddingTop
+    val paddingLeft = paddingLeft
+    val paddingRight = paddingRight
+    background = null
+    setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom)
+}

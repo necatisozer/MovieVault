@@ -9,11 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import dagger.android.support.DaggerFragment
+import dagger.android.support.DaggerAppCompatDialogFragment
 import javax.inject.Inject
 
 abstract class BaseFragment<M : BaseViewModel, B : ViewDataBinding> :
-    DaggerFragment() {
+    DaggerAppCompatDialogFragment() {
 
     @get:LayoutRes
     protected abstract val layoutRes: Int
