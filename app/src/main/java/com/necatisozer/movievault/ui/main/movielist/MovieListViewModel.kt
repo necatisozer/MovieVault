@@ -3,11 +3,10 @@ package com.necatisozer.movievault.ui.main.movielist
 import androidx.lifecycle.MutableLiveData
 import com.necatisozer.movievault.data.repository.MovieRepository
 import com.necatisozer.movievault.data.repository.entity.Movie
+import com.necatisozer.movievault.extension.doInBackground
 import com.necatisozer.movievault.helper.Logger
 import com.necatisozer.movievault.ui.base.BaseViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class MovieListViewModel @Inject constructor(
@@ -18,11 +17,10 @@ class MovieListViewModel @Inject constructor(
 
     fun init() {
         subscription(
-            movieRepository.getNowPlayingMovies().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribeBy(
-                    onNext = { movieListLiveData.value = it },
-                    onError = { logger.w(it) }
-                )
+            movieRepository.getNowPlayingMovies().doInBackground().subscribeBy(
+                onNext = { movieListLiveData.value = it },
+                onError = { logger.w(it) }
+            )
         )
     }
 }
