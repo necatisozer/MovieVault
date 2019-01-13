@@ -7,10 +7,10 @@ import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieListItemBinding
+import com.necatisozer.movievault.extension.inflater
+import com.necatisozer.movievault.extension.loadUrl
 import com.necatisozer.movievault.ui.base.BaseAdapter
 import com.necatisozer.movievault.ui.base.BaseViewHolder
-import com.necatisozer.movievault.utils.inflater
-import com.necatisozer.movievault.utils.loadUrl
 
 class MovieListAdapter : BaseAdapter<Movie, MovieListViewHolder>() {
     override fun onCreateViewHolder(root: ViewGroup) =

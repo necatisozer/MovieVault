@@ -3,7 +3,7 @@ package com.necatisozer.movievault.data.source.tmdb
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.necatisozer.movievault.BuildConfig
 import com.necatisozer.movievault.app.CacheDir
-import com.necatisozer.movievault.utils.debug
+import com.necatisozer.movievault.extension.debug
 import com.serjltt.moshi.adapters.Wrapped
 import com.squareup.moshi.Moshi
 import dagger.Module

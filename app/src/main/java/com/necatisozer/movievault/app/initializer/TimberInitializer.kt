@@ -1,8 +1,8 @@
-package com.necatisozer.movievault.app.appinitializers
+package com.necatisozer.movievault.app.initializer
 
 import android.app.Application
 import com.necatisozer.movievault.BuildConfig
-import com.necatisozer.movievault.utils.TimberLogger
+import com.necatisozer.movievault.helper.TimberLogger
 import javax.inject.Inject
 
 class TimberInitializer @Inject constructor(

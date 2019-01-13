@@ -2,13 +2,13 @@ package com.necatisozer.movievault.app
 
 import android.app.Application
 import android.content.Context
-import com.necatisozer.movievault.app.appinitializers.AndroidThreeTenInitializer
-import com.necatisozer.movievault.app.appinitializers.AppInitializer
-import com.necatisozer.movievault.app.appinitializers.RxPaperInitializer
-import com.necatisozer.movievault.app.appinitializers.StethoInitializer
-import com.necatisozer.movievault.app.appinitializers.TimberInitializer
-import com.necatisozer.movievault.utils.Logger
-import com.necatisozer.movievault.utils.TimberLogger
+import com.necatisozer.movievault.app.initializer.AndroidThreeTenInitializer
+import com.necatisozer.movievault.app.initializer.AppInitializer
+import com.necatisozer.movievault.app.initializer.RxPaperInitializer
+import com.necatisozer.movievault.app.initializer.StethoInitializer
+import com.necatisozer.movievault.app.initializer.TimberInitializer
+import com.necatisozer.movievault.helper.Logger
+import com.necatisozer.movievault.helper.TimberLogger
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

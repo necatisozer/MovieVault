@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.app.appinitializers
+package com.necatisozer.movievault.app.initializer
 
 import android.app.Application
 

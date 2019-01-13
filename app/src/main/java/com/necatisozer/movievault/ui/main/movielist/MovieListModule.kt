@@ -1,7 +1,7 @@
 package com.necatisozer.movievault.ui.main.movielist
 
 import androidx.lifecycle.ViewModel
-import com.necatisozer.movievault.utils.ViewModelKey
+import com.necatisozer.movievault.ui.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.utils
+package com.necatisozer.movievault.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

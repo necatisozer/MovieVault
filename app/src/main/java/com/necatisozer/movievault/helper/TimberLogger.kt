@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.utils
+package com.necatisozer.movievault.helper
 
 import timber.log.Timber
 import javax.inject.Inject

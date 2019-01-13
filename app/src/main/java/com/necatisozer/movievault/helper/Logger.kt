@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.utils
+package com.necatisozer.movievault.helper
 
 interface Logger {
     /** Log a verbose message with optional format args.  */

@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.customview
+package com.necatisozer.movievault.view
 
 import android.animation.Animator
 import android.content.Context
@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import android.view.animation.Animation
 import android.widget.ImageSwitcher
 import android.widget.ImageView
-import com.necatisozer.movievault.utils.AnimUtils
+import com.necatisozer.movievault.util.AnimUtil
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
@@ -52,13 +52,13 @@ class BackgroundSwitcherView : ImageSwitcher {
             myView
         }
 
-        bgImageInLeftAnimation = AnimUtils.createBgImageInAnimation(bgImageGap, 0, movementDuration)
+        bgImageInLeftAnimation = AnimUtil.createBgImageInAnimation(bgImageGap, 0, movementDuration)
         bgImageOutLeftAnimation =
-            AnimUtils.createBgImageOutAnimation(0, -bgImageGap, movementDuration)
+            AnimUtil.createBgImageOutAnimation(0, -bgImageGap, movementDuration)
         bgImageInRightAnimation =
-            AnimUtils.createBgImageInAnimation(-bgImageGap, 0, movementDuration)
+            AnimUtil.createBgImageInAnimation(-bgImageGap, 0, movementDuration)
         bgImageOutRightAnimation =
-            AnimUtils.createBgImageOutAnimation(0, bgImageGap, movementDuration)
+            AnimUtil.createBgImageOutAnimation(0, bgImageGap, movementDuration)
     }
 
     override fun getChildDrawingOrder(childCount: Int, i: Int): Int {

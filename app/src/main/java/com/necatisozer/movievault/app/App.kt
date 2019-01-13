@@ -1,6 +1,6 @@
 package com.necatisozer.movievault.app
 
-import com.necatisozer.movievault.app.appinitializers.AppInitializer
+import com.necatisozer.movievault.app.initializer.AppInitializer
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import javax.inject.Inject
