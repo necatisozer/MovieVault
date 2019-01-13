@@ -1,9 +1,8 @@
 package com.necatisozer.movievault.data.source.tmdb
 
+import android.app.Application
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.necatisozer.movievault.BuildConfig
-import com.necatisozer.movievault.app.CacheDir
-import com.necatisozer.movievault.extension.debug
 import com.serjltt.moshi.adapters.Wrapped
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -23,8 +22,12 @@ import javax.inject.Singleton
 
 @Module
 class TmdbModule {
-    val TIMEOUT_IN_SECONDS: Long = 30
-    val CACHE_SIZE_IN_BYTES: Long = 10 * 1024 * 1024
+
+    @Singleton
+    @Provides
+    @TmdbCache
+    fun provideCache(application: Application): Cache =
+        Cache(File(application.cacheDir, "tmdb-cache"), CACHE_SIZE_IN_BYTES)
 
     @Singleton
     @Provides
@@ -45,18 +48,19 @@ class TmdbModule {
     @Singleton
     @Provides
     fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
-        debug { level = HttpLoggingInterceptor.Level.BODY }
+        level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+        else HttpLoggingInterceptor.Level.NONE
     }
 
     @Singleton
     @Provides
     @TmdbClient
     fun provideOkHttpClient(
-        @CacheDir cacheDir: File,
+        @TmdbCache cache: Cache,
         @TmdbInterceptor requestInterceptor: Interceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
     ) = OkHttpClient.Builder()
-        .cache(Cache(File(cacheDir, "tmdb_cache"), CACHE_SIZE_IN_BYTES))
+        .cache(cache)
         .addInterceptor(requestInterceptor)
         .addInterceptor(httpLoggingInterceptor)
         .addNetworkInterceptor(StethoInterceptor())
@@ -92,14 +96,17 @@ class TmdbModule {
     )
 
     companion object ApiPaths {
-        val API_HOST = "api.themoviedb.org"
-        val API_VERSION = "3"
-        val API_BASE_URL = "https://$API_HOST/$API_VERSION/"
+        private const val TIMEOUT_IN_SECONDS: Long = 30
+        private const val CACHE_SIZE_IN_BYTES: Long = 10 * 1024 * 1024
 
-        val BASE_POSTER_PATH = "http://image.tmdb.org/t/p/w342"
-        val BASR_BACKDROP_PATH = "http://image.tmdb.org/t/p/w780"
-        val YOUTUBE_VIDEO_URL = "http://www.youtube.com/watch?v=%1\$s"
-        val YOUTUBE_THUMBNAIL_URL = "http://img.youtube.com/vi/%1\$s/0.jpg"
+        private const val API_HOST = "api.themoviedb.org"
+        private const val API_VERSION = "3"
+        private const val API_BASE_URL = "https://$API_HOST/$API_VERSION/"
+
+        private const val BASE_POSTER_PATH = "http://image.tmdb.org/t/p/w342"
+        private const val BASR_BACKDROP_PATH = "http://image.tmdb.org/t/p/w780"
+        private const val YOUTUBE_VIDEO_URL = "http://www.youtube.com/watch?v=%1\$s"
+        private const val YOUTUBE_THUMBNAIL_URL = "http://img.youtube.com/vi/%1\$s/0.jpg"
 
         fun getPosterUrl(posterPath: String): String {
             return BASE_POSTER_PATH + posterPath
@@ -110,6 +117,10 @@ class TmdbModule {
         }
     }
 }
+
+@Qualifier
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+annotation class TmdbCache
 
 @Qualifier
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
