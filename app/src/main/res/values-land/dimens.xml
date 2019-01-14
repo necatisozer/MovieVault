@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Movie list -->
+    <dimen name="movie_list_item_corner_radius">8dp</dimen>
+
+</resources>
