@@ -40,8 +40,8 @@ class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBind
 
     private fun initializeViewModel() {
         viewModel.apply {
-            movieListLiveData.observe(this@MovieListFragment, Observer { movieList ->
-                moviesListAdapter.submitList(movieList)
+            movieListLiveData.observe(this@MovieListFragment, Observer {
+                moviesListAdapter.submitList(it)
             })
 
             init()

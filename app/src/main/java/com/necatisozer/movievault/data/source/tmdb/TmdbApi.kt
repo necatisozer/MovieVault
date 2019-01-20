@@ -30,4 +30,7 @@ interface TmdbApi {
 
     @GET("movie/{movie_id}")
     fun getMovieById(@Path("movie_id") movieId: String): Single<Movie>
+
+    @GET("search/movie")
+    fun searchMovie(@Query("query") query: String, @Query("page") page: Int): Single<MovieResults>
 }

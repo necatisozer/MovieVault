@@ -47,6 +47,9 @@ class ProdMovieRepository @Inject constructor(
         else storedMovies.toObservable()
     }
 
+    override fun searchMovie(query: String): Observable<List<Movie>> =
+        tmdbApi.searchMovie(query, 1).map { it.mapToMovieList() }.toObservable()
+
     companion object RxMovieBookKeys {
         private const val popular_movies = "popular_movies"
         private const val now_playing_movies = "now_playing_movies"

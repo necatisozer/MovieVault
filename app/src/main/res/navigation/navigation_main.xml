@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/movie_list">
+
+    <fragment
+        android:id="@+id/movie_list"
+        android:label="Movie List"
+        android:name="com.necatisozer.movievault.ui.main.movielist.MovieListFragment">
+
+        <action
+            android:id="@+id/action_movie_list_to_movie_search"
+            app:destination="@id/movie_search"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/movie_list" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_search"
+        android:label="Movie Search"
+        android:name="com.necatisozer.movievault.ui.main.moviesearch.MovieSearchFragment" />
+
+</navigation>

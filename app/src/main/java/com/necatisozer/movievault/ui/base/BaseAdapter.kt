@@ -1,5 +1,6 @@
 package com.necatisozer.movievault.ui.base
 
+import android.content.Context
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
@@ -19,6 +20,7 @@ abstract class BaseAdapter<D, H : BaseViewHolder<D, ViewDataBinding>> :
 
 abstract class BaseViewHolder<D, out B : ViewDataBinding>(protected val binding: B) :
     RecyclerView.ViewHolder(binding.root) {
+    protected val context: Context = binding.root.context
     abstract fun bindData(data: D)
 }
 

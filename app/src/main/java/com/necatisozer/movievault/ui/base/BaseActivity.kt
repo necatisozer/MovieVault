@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
@@ -15,6 +16,7 @@ abstract class BaseActivity<M : BaseViewModel, B : ViewDataBinding> :
     @get:LayoutRes
     protected abstract val layoutRes: Int
     protected abstract val viewModelClass: Class<M>
+    protected abstract val navController: NavController
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory

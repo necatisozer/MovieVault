@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.ui.main.movielist
+package com.necatisozer.movievault.ui.main.moviesearch
 
 import androidx.lifecycle.MutableLiveData
 import com.necatisozer.movievault.data.repository.MovieRepository
@@ -9,15 +9,15 @@ import com.necatisozer.movievault.ui.base.BaseViewModel
 import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
-class MovieListViewModel @Inject constructor(
+class MovieSearchViewModel @Inject constructor(
     private val movieRepository: MovieRepository,
     private val logger: Logger
 ) : BaseViewModel() {
     val movieListLiveData = MutableLiveData<List<Movie>>()
 
-    fun init() {
+    fun onQueryTextChange(query: String) {
         subscription(
-            movieRepository.getNowPlayingMovies().doInBackground().subscribeBy(
+            movieRepository.searchMovie(query).doInBackground().subscribeBy(
                 onNext = { movieListLiveData.value = it },
                 onError = { logger.w(it) }
             )
