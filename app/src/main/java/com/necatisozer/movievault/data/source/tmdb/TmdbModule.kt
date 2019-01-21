@@ -39,6 +39,7 @@ class TmdbModule {
             .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
             .addQueryParameter("language", Locale.getDefault().toLanguageTag())
             .addQueryParameter("region", Locale.getDefault().country)
+            .addQueryParameter("append_to_response", "videos,images")
             .build()
 
         val request = originalRequest.newBuilder().url(url).build()
@@ -104,7 +105,8 @@ class TmdbModule {
         private const val API_BASE_URL = "https://$API_HOST/$API_VERSION/"
 
         private const val BASE_POSTER_PATH = "http://image.tmdb.org/t/p/w342"
-        private const val BASR_BACKDROP_PATH = "http://image.tmdb.org/t/p/w780"
+        private const val BASE_PROFILE_PATH = "http://image.tmdb.org/t/p/w500"
+        private const val BASE_BACKDROP_PATH = "http://image.tmdb.org/t/p/w780"
         private const val YOUTUBE_VIDEO_URL = "http://www.youtube.com/watch?v=%1\$s"
         private const val YOUTUBE_THUMBNAIL_URL = "http://img.youtube.com/vi/%1\$s/0.jpg"
 
@@ -113,7 +115,11 @@ class TmdbModule {
         }
 
         fun getBackdropUrl(backdropPath: String): String {
-            return BASR_BACKDROP_PATH + backdropPath
+            return BASE_BACKDROP_PATH + backdropPath
+        }
+
+        fun getProfileUrl(profilePath: String): String {
+            return BASE_PROFILE_PATH + profilePath
         }
     }
 }

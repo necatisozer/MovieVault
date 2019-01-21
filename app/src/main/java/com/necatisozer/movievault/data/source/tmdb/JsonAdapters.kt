@@ -19,5 +19,5 @@ class StatusAdapter {
     fun toJson(status: Movie.Status) = status.value
 
     @FromJson
-    fun fromJson(status: String) = Movie.Status.valueOf(status)
+    fun fromJson(status: String) = Movie.Status.values().first { it.value == status }
 }

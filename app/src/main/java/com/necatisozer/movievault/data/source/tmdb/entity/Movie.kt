@@ -6,8 +6,8 @@ import org.threeten.bp.LocalDate
 @JsonClass(generateAdapter = true)
 data class Movie(
     val adult: Boolean,
-    val backdrop_path: BelongsToCollection?,
-    val belongs_to_collection: Any?,
+    val backdrop_path: String?,
+    val belongs_to_collection: BelongsToCollection?,
     val budget: Int,
     val genres: List<Genre>,
     val homepage: String?,
@@ -60,10 +60,10 @@ data class Movie(
 
     @JsonClass(generateAdapter = true)
     data class BelongsToCollection(
-        val backdrop_path: String,
+        val backdrop_path: String?,
         val id: Int,
         val name: String,
-        val poster_path: String
+        val poster_path: String?
     ) : TmdbEntity
 
     @JsonClass(generateAdapter = true)

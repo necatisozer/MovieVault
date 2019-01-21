@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/generic_default_margin">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/photo"
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:src="@drawable/profile_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:ellipsize="end"
+            android:id="@+id/name"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/generic_default_margin"
+            android:layout_width="wrap_content"
+            android:maxEms="6"
+            android:maxLines="1"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photo"
+            tools:text="Robert Downey Jr." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:ellipsize="end"
+            android:id="@+id/character"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:maxEms="6"
+            android:maxLines="1"
+            android:textColor="?attr/colorOnSurfaceDisabled"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="Avengers: Endgame" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

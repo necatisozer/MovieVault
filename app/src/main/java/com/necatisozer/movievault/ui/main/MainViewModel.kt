@@ -6,8 +6,13 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor() : BaseViewModel() {
     val queryLiveData = MutableLiveData<String>()
+    val showMovieDetailLiveData = MutableLiveData<Boolean>()
 
     fun onQueryTextChange(query: String) {
         queryLiveData.value = query
+    }
+
+    fun onShowMovieDetail() {
+        showMovieDetailLiveData.value = true
     }
 }

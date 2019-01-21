@@ -1,6 +1,10 @@
 package com.necatisozer.movievault.data.repository
 
+import com.necatisozer.movievault.data.repository.entity.Cast
+import com.necatisozer.movievault.data.repository.entity.Crew
 import com.necatisozer.movievault.data.repository.entity.Movie
+import com.necatisozer.movievault.data.repository.mapper.mapToCastAndCrewList
+import com.necatisozer.movievault.data.repository.mapper.mapToMovieEntity
 import com.necatisozer.movievault.data.repository.mapper.mapToMovieList
 import com.necatisozer.movievault.data.source.rxpaper.RxMovieBook
 import com.necatisozer.movievault.data.source.tmdb.TmdbApi
@@ -49,6 +53,12 @@ class ProdMovieRepository @Inject constructor(
 
     override fun searchMovie(query: String): Observable<List<Movie>> =
         tmdbApi.searchMovie(query, 1).map { it.mapToMovieList() }.toObservable()
+
+    override fun getMovie(id: Int): Observable<Movie> =
+        tmdbApi.getMovieById(id.toString()).map { it.mapToMovieEntity() }.toObservable()
+
+    override fun getCredits(id: Int): Observable<Pair<List<Cast>, List<Crew>>> =
+        tmdbApi.getMovieCredits(id.toString()).map { it.mapToCastAndCrewList() }.toObservable()
 
     companion object RxMovieBookKeys {
         private const val popular_movies = "popular_movies"

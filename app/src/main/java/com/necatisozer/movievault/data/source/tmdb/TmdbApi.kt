@@ -1,6 +1,7 @@
 package com.necatisozer.movievault.data.source.tmdb
 
 import com.necatisozer.movievault.data.source.tmdb.entity.Configurations
+import com.necatisozer.movievault.data.source.tmdb.entity.Credits
 import com.necatisozer.movievault.data.source.tmdb.entity.Jobs
 import com.necatisozer.movievault.data.source.tmdb.entity.Movie
 import com.necatisozer.movievault.data.source.tmdb.entity.MovieResults
@@ -30,6 +31,9 @@ interface TmdbApi {
 
     @GET("movie/{movie_id}")
     fun getMovieById(@Path("movie_id") movieId: String): Single<Movie>
+
+    @GET("movie/{movie_id}/credits")
+    fun getMovieCredits(@Path("movie_id") movieId: String): Single<Credits>
 
     @GET("search/movie")
     fun searchMovie(@Query("query") query: String, @Query("page") page: Int): Single<MovieResults>

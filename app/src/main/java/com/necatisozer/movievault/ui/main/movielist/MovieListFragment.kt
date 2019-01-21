@@ -2,16 +2,32 @@ package com.necatisozer.movievault.ui.main.movielist
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.necatisozer.movievault.R
+import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieListFragmentBinding
 import com.necatisozer.movievault.ui.base.BaseFragment
+import com.necatisozer.movievault.ui.base.OnItemClickListener
+import com.necatisozer.movievault.ui.main.MainViewModel
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 
-class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBinding>() {
+class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBinding>(),
+    OnItemClickListener<Movie> {
     override val layoutRes = R.layout.movie_list_fragment
     override val viewModelClass = MovieListViewModel::class.java
 
-    private val moviesListAdapter: MovieListAdapter by lazy { MovieListAdapter() }
+    private lateinit var mainViewModel: MainViewModel
+
+    private val moviesListAdapter: MovieListAdapter by lazy {
+        MovieListAdapter().apply { clickListener = this@MovieListFragment }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mainViewModel = ViewModelProviders.of(requireActivity(), viewModelFactory)
+            .get(MainViewModel::class.java)
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -45,6 +61,12 @@ class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBind
             })
 
             init()
+        }
+    }
+
+    override fun onItemClick(data: Movie) {
+        MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(data.id).also {
+            view?.findNavController()?.navigate(it)
         }
     }
 }

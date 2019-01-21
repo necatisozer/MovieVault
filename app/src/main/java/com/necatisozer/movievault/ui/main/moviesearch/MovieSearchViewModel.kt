@@ -16,7 +16,7 @@ class MovieSearchViewModel @Inject constructor(
     val movieListLiveData = MutableLiveData<List<Movie>>()
 
     fun onQueryTextChange(query: String) {
-        subscription(
+        addDisposable(
             movieRepository.searchMovie(query).doInBackground().subscribeBy(
                 onNext = { movieListLiveData.value = it },
                 onError = { logger.w(it) }

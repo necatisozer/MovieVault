@@ -11,6 +11,7 @@ import com.necatisozer.movievault.databinding.MovieSearchItemBinding
 import com.necatisozer.movievault.extension.gone
 import com.necatisozer.movievault.extension.inflater
 import com.necatisozer.movievault.extension.loadUrl
+import com.necatisozer.movievault.extension.visible
 import com.necatisozer.movievault.ui.base.BaseAdapter
 import com.necatisozer.movievault.ui.base.BaseViewHolder
 
@@ -36,10 +37,7 @@ class MovieSearchViewHolder(binding: MovieSearchItemBinding) :
     override fun bindData(data: Movie) {
         binding.apply {
             data.posterUrl?.let {
-                binding.poster.loadUrl(
-                    it,
-                    R.dimen.movie_list_item_corner_radius
-                )
+                binding.poster.loadUrl(it, R.dimen.movie_list_item_corner_radius)
             }
 
             title.text = context.getString(
@@ -48,10 +46,13 @@ class MovieSearchViewHolder(binding: MovieSearchItemBinding) :
                 data.releaseDate.year.toString()
             )
 
-            if (data.originalTitle != data.title)
-                originalTitle.text = data.originalTitle
-            else {
-                originalTitle.gone()
+            originalTitle.apply {
+                if (data.originalTitle != data.title) {
+                    text = data.originalTitle
+                    visible()
+                } else {
+                    gone()
+                }
             }
 
             description.text = data.overview

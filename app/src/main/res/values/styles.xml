@@ -5,4 +5,8 @@
         <item name="colorPrimaryDark">@android:color/black</item>
     </style>
 
+    <style name="AppTheme.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+    </style>
+
 </resources>
