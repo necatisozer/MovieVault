@@ -59,10 +59,10 @@ dependencies {
     kapt "androidx.lifecycle:lifecycle-compiler:2.1.0-alpha01"
 
     // Navigation
-    implementation "android.arch.navigation:navigation-fragment:1.0.0-alpha09"
-    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha09'
-    implementation "android.arch.navigation:navigation-ui:1.0.0-alpha09"
-    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha09'
+    implementation "android.arch.navigation:navigation-fragment:1.0.0-alpha11"
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha11'
+    implementation "android.arch.navigation:navigation-ui:1.0.0-alpha11"
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha11'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.5.0"
