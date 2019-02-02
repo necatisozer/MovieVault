@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:elevation="4dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/poster"
+                        android:layout_height="0dp"
+                        android:layout_width="0dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="h,9:5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/sample_backdrop" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:behavior_overlapTop="@dimen/generic_extra_large_margin"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.google.android.material.card.MaterialCardView
+                android:elevation="@dimen/movie_list_item_elevation"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/generic_large_margin"
+                android:layout_width="match_parent"
+                android:theme="@style/AppTheme.Light"
+                app:cardCornerRadius="@dimen/movie_list_item_corner_radius">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/generic_large_margin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:id="@+id/title"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Avengers: Endgame (2019)" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:id="@+id/original_title"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_default_margin"
+                        android:layout_width="match_parent"
+                        android:textColor="?attr/colorOnSurfaceDisabled"
+                        android:textStyle="italic"
+                        app:layout_constraintTop_toBottomOf="@id/title"
+                        tools:text="Avengers: Endgame" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:id="@+id/description"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_default_margin"
+                        android:layout_width="match_parent"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@id/original_title"
+                        tools:text="@string/sample_paragraph" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:id="@+id/title_cast"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_very_large_margin"
+                        android:layout_width="wrap_content"
+                        android:text="@string/title_cast"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/colorOnSurfaceDisabled"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/description" />
+
+                    <View
+                        android:background="?attr/colorOnSurface"
+                        android:id="@+id/line_below_cast_title"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/generic_small_margin"
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_cast" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/cast_view"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_small_margin"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/line_below_cast_title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:id="@+id/title_crew"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_very_large_margin"
+                        android:layout_width="wrap_content"
+                        android:text="@string/title_crew"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/colorOnSurfaceDisabled"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cast_view" />
+
+                    <View
+                        android:background="?attr/colorOnSurface"
+                        android:id="@+id/line_below_crew_title"
+                        android:layout_height="1px"
+                        android:layout_marginTop="@dimen/generic_small_margin"
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_crew" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/crew_view"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/generic_small_margin"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/line_below_crew_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

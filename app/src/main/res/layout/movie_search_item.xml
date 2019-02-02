@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:elevation="@dimen/movie_list_item_elevation"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/generic_default_margin"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="@dimen/movie_list_item_corner_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:adjustViewBounds="true"
+                android:id="@+id/poster"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/generic_large_margin"
+                android:layout_width="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="w,2:3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/sample_poster" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/title"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/generic_large_margin"
+                android:layout_width="0dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/poster"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Avengers: Endgame (2019)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:id="@+id/original_title"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/generic_default_margin"
+                android:layout_width="0dp"
+                android:textColor="?attr/colorOnSurfaceDisabled"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/title"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Avengers: Endgame" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:ellipsize="end"
+                android:id="@+id/description"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/generic_default_margin"
+                android:layout_width="0dp"
+                android:maxLines="7"
+                android:textSize="12sp"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/poster"
+                app:layout_constraintEnd_toEndOf="@id/title"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/original_title"
+                tools:text="@string/sample_paragraph" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

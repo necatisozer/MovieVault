@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Generic margins -->
+    <dimen name="generic_very_small_margin">2dp</dimen>
+    <dimen name="generic_small_margin">4dp</dimen>
+    <dimen name="generic_default_margin">8dp</dimen>
+    <dimen name="generic_large_margin">16dp</dimen>
+    <dimen name="generic_very_large_margin">32dp</dimen>
+    <dimen name="generic_extra_large_margin">64dp</dimen>
+
+    <!-- Movie list -->
+    <dimen name="movie_list_item_corner_radius">12dp</dimen>
+    <dimen name="movie_list_item_elevation">8dp</dimen>
+
+</resources>

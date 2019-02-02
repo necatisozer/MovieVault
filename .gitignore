@@ -99,6 +99,7 @@ gen-external-apklibs
 
 # Android Studio
 /*/build/
+/*/release/
 /*/local.properties
 /*/out
 /*/*/build
@@ -136,6 +137,7 @@ obj/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/navEditor.xml
 
 # OS-specific files
 .DS_Store
