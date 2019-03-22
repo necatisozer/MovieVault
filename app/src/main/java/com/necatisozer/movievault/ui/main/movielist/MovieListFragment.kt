@@ -5,8 +5,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.necatisozer.movievault.R
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieListFragmentBinding
+import com.necatisozer.movievault.domain.entity.Movie
 import com.necatisozer.movievault.ui.base.BaseFragment
 import com.necatisozer.movievault.ui.base.OnItemClickListener
 import com.necatisozer.movievault.ui.main.MainViewModel

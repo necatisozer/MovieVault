@@ -3,8 +3,8 @@ package com.necatisozer.movievault.ui.main.moviedetail
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.necatisozer.movievault.R
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieDetailFragmentBinding
+import com.necatisozer.movievault.domain.entity.Movie
 import com.necatisozer.movievault.extension.gone
 import com.necatisozer.movievault.extension.loadUrl
 import com.necatisozer.movievault.extension.visible

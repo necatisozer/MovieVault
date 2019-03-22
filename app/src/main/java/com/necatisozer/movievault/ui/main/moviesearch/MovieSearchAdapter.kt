@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import com.necatisozer.movievault.R
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieSearchItemBinding
+import com.necatisozer.movievault.domain.entity.Movie
 import com.necatisozer.movievault.extension.gone
 import com.necatisozer.movievault.extension.inflater
 import com.necatisozer.movievault.extension.loadUrl

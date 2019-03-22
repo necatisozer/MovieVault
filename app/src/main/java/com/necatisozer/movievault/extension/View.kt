@@ -1,5 +1,6 @@
 package com.necatisozer.movievault.extension
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.INVISIBLE
@@ -16,3 +17,5 @@ fun View.invisible() {
 fun View.gone() {
     visibility = GONE
 }
+
+fun View.inflater(): LayoutInflater = LayoutInflater.from(context)

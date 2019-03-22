@@ -1,18 +1,18 @@
 package com.necatisozer.movievault.data.repository.mapper
 
-import com.necatisozer.movievault.data.repository.entity.Cast
-import com.necatisozer.movievault.data.repository.entity.Crew
-import com.necatisozer.movievault.data.repository.entity.Genre
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.data.source.tmdb.TmdbModule
 import com.necatisozer.movievault.data.source.tmdb.entity.Credits
 import com.necatisozer.movievault.data.source.tmdb.entity.MovieResults
+import com.necatisozer.movievault.domain.entity.Cast
+import com.necatisozer.movievault.domain.entity.Crew
+import com.necatisozer.movievault.domain.entity.Genre
+import com.necatisozer.movievault.domain.entity.Movie
 
 fun MovieResults.Result.mapToMovieEntity() =
     Movie(
         adult = adult,
         backdropUrl = backdrop_path?.let { TmdbModule.getBackdropUrl(it) },
-        genres = genre_ids.map { it -> Genre(id = it, name = "") }, // TODO: Get genre strings
+        genres = genre_ids.map { Genre(id = it, name = "") }, // TODO: Get genre strings
         id = id,
         originalLanguage = original_language,
         originalTitle = original_title,
@@ -30,7 +30,7 @@ fun com.necatisozer.movievault.data.source.tmdb.entity.Movie.mapToMovieEntity() 
     Movie(
         adult = adult,
         backdropUrl = backdrop_path?.let { TmdbModule.getBackdropUrl(it) },
-        genres = genres.map { it -> Genre(id = it.id, name = it.name) },
+        genres = genres.map { Genre(id = it.id, name = it.name) },
         id = id,
         originalLanguage = original_language,
         originalTitle = original_title,

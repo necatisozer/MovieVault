@@ -1,25 +1,25 @@
 package com.necatisozer.movievault.data.repository
 
-import com.necatisozer.movievault.data.repository.entity.Cast
-import com.necatisozer.movievault.data.repository.entity.Crew
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.data.repository.mapper.mapToCastAndCrewList
 import com.necatisozer.movievault.data.repository.mapper.mapToMovieEntity
 import com.necatisozer.movievault.data.repository.mapper.mapToMovieList
 import com.necatisozer.movievault.data.source.rxpaper.RxMovieBook
 import com.necatisozer.movievault.data.source.tmdb.TmdbApi
+import com.necatisozer.movievault.domain.entity.Cast
+import com.necatisozer.movievault.domain.entity.Crew
+import com.necatisozer.movievault.domain.entity.Movie
+import com.necatisozer.movievault.domain.repository.MovieRepository
 import com.necatisozer.movievault.helper.Logger
-import com.necatisozer.movievault.util.DeviceUtil
 import com.pacoworks.rxpaper2.RxPaperBook
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.rxkotlin.subscribeBy
+import splitties.systemservices.connectivityManager
 import javax.inject.Inject
 
 class ProdMovieRepository @Inject constructor(
     @RxMovieBook private val rxMovieBook: RxPaperBook,
     private val tmdbApi: TmdbApi,
-    private val deviceUtil: DeviceUtil,
     private val logger: Logger
 ) : MovieRepository {
     override fun getNowPlayingMovies(): Observable<List<Movie>> {
@@ -32,7 +32,7 @@ class ProdMovieRepository @Inject constructor(
                 )
         }
 
-        return if (deviceUtil.isConnected())
+        return if (connectivityManager.activeNetworkInfo?.isConnected == true)
             Single.concat(storedMovies, updatedMovies).toObservable()
         else storedMovies.toObservable()
     }
@@ -46,7 +46,7 @@ class ProdMovieRepository @Inject constructor(
             )
         }
 
-        return if (deviceUtil.isConnected())
+        return if (connectivityManager.activeNetworkInfo?.isConnected == true)
             Single.concat(storedMovies, updatedMovies).toObservable()
         else storedMovies.toObservable()
     }

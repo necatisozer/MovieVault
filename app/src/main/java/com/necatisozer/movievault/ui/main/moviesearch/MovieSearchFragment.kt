@@ -8,8 +8,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.necatisozer.movievault.R
-import com.necatisozer.movievault.data.repository.entity.Movie
 import com.necatisozer.movievault.databinding.MovieSearchFragmentBinding
+import com.necatisozer.movievault.domain.entity.Movie
 import com.necatisozer.movievault.ui.base.BaseFragment
 import com.necatisozer.movievault.ui.base.OnItemClickListener
 import com.necatisozer.movievault.ui.main.MainViewModel

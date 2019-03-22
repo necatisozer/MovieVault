@@ -1,8 +1,8 @@
 package com.necatisozer.movievault.ui.main.movielist
 
 import androidx.lifecycle.MutableLiveData
-import com.necatisozer.movievault.data.repository.MovieRepository
-import com.necatisozer.movievault.data.repository.entity.Movie
+import com.necatisozer.movievault.domain.entity.Movie
+import com.necatisozer.movievault.domain.repository.MovieRepository
 import com.necatisozer.movievault.extension.doInBackground
 import com.necatisozer.movievault.helper.Logger
 import com.necatisozer.movievault.ui.base.BaseViewModel

@@ -10,8 +10,6 @@ import androidx.databinding.ViewDataBinding
 operator fun ViewGroup.plusAssign(child: View) = addView(child)
 operator fun ViewGroup.minusAssign(child: View) = removeView(child)
 
-fun ViewGroup.inflater(): LayoutInflater = LayoutInflater.from(context)
-
 fun ViewGroup.inflate(@LayoutRes resourceId: Int): View =
     LayoutInflater.from(context).inflate(resourceId, this, false)
 

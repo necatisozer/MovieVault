@@ -1,8 +1,8 @@
-package com.necatisozer.movievault.data.repository
+package com.necatisozer.movievault.domain.repository
 
-import com.necatisozer.movievault.data.repository.entity.Cast
-import com.necatisozer.movievault.data.repository.entity.Crew
-import com.necatisozer.movievault.data.repository.entity.Movie
+import com.necatisozer.movievault.domain.entity.Cast
+import com.necatisozer.movievault.domain.entity.Crew
+import com.necatisozer.movievault.domain.entity.Movie
 import io.reactivex.Observable
 
 interface MovieRepository : Repository {

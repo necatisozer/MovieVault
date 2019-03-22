@@ -2,6 +2,7 @@ package com.necatisozer.movievault.data.repository
 
 import com.necatisozer.movievault.data.source.rxpaper.RxPaperModule
 import com.necatisozer.movievault.data.source.tmdb.TmdbModule
+import com.necatisozer.movievault.domain.repository.MovieRepository
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton

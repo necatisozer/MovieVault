@@ -2,8 +2,8 @@ package com.necatisozer.movievault.ui.main.moviedetail
 
 import android.view.ViewGroup
 import com.necatisozer.movievault.R
-import com.necatisozer.movievault.data.repository.entity.Crew
 import com.necatisozer.movievault.databinding.CreditItemBinding
+import com.necatisozer.movievault.domain.entity.Crew
 import com.necatisozer.movievault.extension.inflater
 import com.necatisozer.movievault.extension.loadDrawableRes
 import com.necatisozer.movievault.extension.loadUrlAsCircle

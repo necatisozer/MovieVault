@@ -1,4 +1,4 @@
-package com.necatisozer.movievault.data.repository.entity
+package com.necatisozer.movievault.domain.entity
 
 data class Cast(
     val id: Int,
