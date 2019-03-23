@@ -19,4 +19,5 @@ object RxBus {
 
 sealed class RxEvent {
     object SampleEvent : RxEvent()
+    data class SampleDataEvent(val data: String) : RxEvent()
 }
