@@ -18,5 +18,5 @@ object RxBus {
 }
 
 sealed class RxEvent {
-    object OnboardingCompleted : RxEvent()
+    object SampleEvent : RxEvent()
 }
