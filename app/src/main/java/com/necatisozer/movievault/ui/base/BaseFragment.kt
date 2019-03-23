@@ -7,28 +7,18 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.DaggerAppCompatDialogFragment
-import javax.inject.Inject
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
-abstract class BaseFragment<M : BaseViewModel, B : ViewDataBinding> :
+abstract class BaseFragment<B : ViewDataBinding> :
     DaggerAppCompatDialogFragment() {
 
     @get:LayoutRes
     protected abstract val layoutRes: Int
-    protected abstract val viewModelClass: Class<M>
-
-    @Inject
-    protected lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    protected lateinit var viewModel: M
     protected lateinit var binding: B
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(viewModelClass)
-    }
+    private val disposables = CompositeDisposable()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,5 +27,14 @@ abstract class BaseFragment<M : BaseViewModel, B : ViewDataBinding> :
     ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
+    }
+
+    protected fun addDisposable(vararg disposables: Disposable) {
+        disposables.forEach { this.disposables.add(it) }
+    }
+
+    override fun onDestroy() {
+        disposables.dispose()
+        super.onDestroy()
     }
 }

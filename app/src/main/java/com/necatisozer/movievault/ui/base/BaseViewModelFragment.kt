@@ -1,14 +1,13 @@
 package com.necatisozer.movievault.ui.base
 
 import android.os.Bundle
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-abstract class BaseActivity<M : BaseViewModel> :
-    DaggerAppCompatActivity() {
-
+abstract class BaseViewModelFragment<M : BaseViewModel, B : ViewDataBinding> :
+    BaseFragment<B>() {
     protected abstract val viewModelClass: Class<M>
 
     @Inject

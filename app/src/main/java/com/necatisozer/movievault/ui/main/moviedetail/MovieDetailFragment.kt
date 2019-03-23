@@ -8,9 +8,10 @@ import com.necatisozer.movievault.domain.entity.Movie
 import com.necatisozer.movievault.extension.gone
 import com.necatisozer.movievault.extension.loadUrl
 import com.necatisozer.movievault.extension.visible
-import com.necatisozer.movievault.ui.base.BaseFragment
+import com.necatisozer.movievault.ui.base.BaseViewModelFragment
 
-class MovieDetailFragment : BaseFragment<MovieDetailViewModel, MovieDetailFragmentBinding>() {
+class MovieDetailFragment :
+    BaseViewModelFragment<MovieDetailViewModel, MovieDetailFragmentBinding>() {
     override val layoutRes = R.layout.movie_detail_fragment
     override val viewModelClass = MovieDetailViewModel::class.java
 

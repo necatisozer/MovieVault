@@ -7,12 +7,12 @@ import androidx.navigation.findNavController
 import com.necatisozer.movievault.R
 import com.necatisozer.movievault.databinding.MovieListFragmentBinding
 import com.necatisozer.movievault.domain.entity.Movie
-import com.necatisozer.movievault.ui.base.BaseFragment
+import com.necatisozer.movievault.ui.base.BaseViewModelFragment
 import com.necatisozer.movievault.ui.base.OnItemClickListener
 import com.necatisozer.movievault.ui.main.MainViewModel
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 
-class MovieListFragment : BaseFragment<MovieListViewModel, MovieListFragmentBinding>(),
+class MovieListFragment : BaseViewModelFragment<MovieListViewModel, MovieListFragmentBinding>(),
     OnItemClickListener<Movie> {
     override val layoutRes = R.layout.movie_list_fragment
     override val viewModelClass = MovieListViewModel::class.java

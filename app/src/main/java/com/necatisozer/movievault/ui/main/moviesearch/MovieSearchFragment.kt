@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.necatisozer.movievault.R
 import com.necatisozer.movievault.databinding.MovieSearchFragmentBinding
 import com.necatisozer.movievault.domain.entity.Movie
-import com.necatisozer.movievault.ui.base.BaseFragment
+import com.necatisozer.movievault.ui.base.BaseViewModelFragment
 import com.necatisozer.movievault.ui.base.OnItemClickListener
 import com.necatisozer.movievault.ui.main.MainViewModel
 
-class MovieSearchFragment : BaseFragment<MovieSearchViewModel, MovieSearchFragmentBinding>(),
+class MovieSearchFragment :
+    BaseViewModelFragment<MovieSearchViewModel, MovieSearchFragmentBinding>(),
     OnItemClickListener<Movie> {
     override val layoutRes = R.layout.movie_search_fragment
     override val viewModelClass = MovieSearchViewModel::class.java
