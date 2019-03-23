@@ -23,7 +23,7 @@ android {
         if (!versionStage.isEmpty()) {
             versionName "${versionName}-${versionStage}"
         }
-        archivesBaseName = "hocanizkim-app-$versionName-$versionCode"
+        archivesBaseName = "movievault-app-$versionName-$versionCode"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         buildConfigField 'String', "TMDB_API_KEY", getLocalProperty("TMDB_API_KEY")
