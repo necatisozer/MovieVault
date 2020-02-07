@@ -1,666 +1,81 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
-    <option name="RIGHT_MARGIN" value="100" />
-    <AndroidXmlCodeStyleSettings>
-      <option name="USE_CUSTOM_SETTINGS" value="true" />
-    </AndroidXmlCodeStyleSettings>
-    <JavaCodeStyleSettings>
-      <option name="REPLACE_INSTANCEOF" value="true" />
-      <option name="REPLACE_CAST" value="true" />
-      <option name="ANNOTATION_PARAMETER_WRAP" value="5" />
-      <option name="ALIGN_MULTILINE_ANNOTATION_PARAMETERS" value="true" />
-      <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999" />
-      <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999" />
-      <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
-        <value />
-      </option>
-      <option name="IMPORT_LAYOUT_TABLE">
-        <value>
-          <package name="android" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="com" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="junit" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="net" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="org" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="java" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="javax" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="" withSubpackages="true" static="true" />
-          <emptyLine />
-        </value>
-      </option>
-      <option name="JD_ALIGN_PARAM_COMMENTS" value="false" />
-      <option name="JD_ALIGN_EXCEPTION_COMMENTS" value="false" />
-      <option name="JD_ADD_BLANK_AFTER_PARM_COMMENTS" value="true" />
-      <option name="JD_ADD_BLANK_AFTER_RETURN" value="true" />
-      <option name="JD_DO_NOT_WRAP_ONE_LINE_COMMENTS" value="true" />
-    </JavaCodeStyleSettings>
     <JetCodeStyleSettings>
-      <option name="PACKAGES_TO_USE_STAR_IMPORTS">
-        <value>
-          <package name="kotlinx.android.synthetic" withSubpackages="true" static="false" />
-        </value>
-      </option>
-      <option name="NAME_COUNT_TO_USE_STAR_IMPORT" value="2147483647" />
-      <option name="NAME_COUNT_TO_USE_STAR_IMPORT_FOR_MEMBERS" value="2147483647" />
       <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
     </JetCodeStyleSettings>
-    <Objective-C-extensions>
-      <file>
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Import" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Macro" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Typedef" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Enum" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Constant" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Global" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Struct" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="FunctionPredecl" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Function" />
-      </file>
-      <class>
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Property" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Synthesize" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InitMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="StaticMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InstanceMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="DeallocMethod" />
-      </class>
-      <extensions>
-        <pair source="cpp" header="h" fileNamingConvention="NONE" />
-        <pair source="c" header="h" fileNamingConvention="NONE" />
-      </extensions>
-    </Objective-C-extensions>
-    <XML>
-      <option name="XML_KEEP_LINE_BREAKS" value="false" />
-      <option name="XML_ALIGN_ATTRIBUTES" value="false" />
-      <option name="XML_SPACE_INSIDE_EMPTY_TAG" value="true" />
-      <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
-    </XML>
-    <codeStyleSettings language="JAVA">
-      <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
-      <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
-      <option name="KEEP_LINE_BREAKS" value="false" />
-      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
-      <option name="INDENT_CASE_FROM_SWITCH" value="false" />
-      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
-      <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
-      <option name="ALIGN_MULTILINE_ASSIGNMENT" value="true" />
-      <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
-      <option name="ALIGN_MULTILINE_THROWS_LIST" value="true" />
-      <option name="ALIGN_MULTILINE_EXTENDS_LIST" value="true" />
-      <option name="ALIGN_MULTILINE_METHOD_BRACKETS" value="true" />
-      <option name="SPACE_BEFORE_ARRAY_INITIALIZER_LBRACE" value="true" />
-      <option name="CALL_PARAMETERS_WRAP" value="5" />
-      <option name="METHOD_PARAMETERS_WRAP" value="5" />
-      <option name="RESOURCE_LIST_WRAP" value="5" />
-      <option name="EXTENDS_LIST_WRAP" value="5" />
-      <option name="THROWS_LIST_WRAP" value="1" />
-      <option name="EXTENDS_KEYWORD_WRAP" value="1" />
-      <option name="THROWS_KEYWORD_WRAP" value="1" />
-      <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
-      <option name="BINARY_OPERATION_WRAP" value="1" />
-      <option name="TERNARY_OPERATION_WRAP" value="5" />
+    <Objective-C>
+      <option name="INDENT_NAMESPACE_MEMBERS" value="0" />
+      <option name="INDENT_C_STRUCT_MEMBERS" value="2" />
+      <option name="INDENT_CLASS_MEMBERS" value="2" />
+      <option name="INDENT_VISIBILITY_KEYWORDS" value="1" />
+      <option name="INDENT_INSIDE_CODE_BLOCK" value="2" />
+      <option name="KEEP_STRUCTURES_IN_ONE_LINE" value="true" />
+      <option name="KEEP_CASE_EXPRESSIONS_IN_ONE_LINE" value="true" />
+      <option name="FUNCTION_NON_TOP_AFTER_RETURN_TYPE_WRAP" value="0" />
+      <option name="FUNCTION_TOP_AFTER_RETURN_TYPE_WRAP" value="0" />
+      <option name="FUNCTION_PARAMETERS_WRAP" value="5" />
+      <option name="FUNCTION_CALL_ARGUMENTS_WRAP" value="5" />
+      <option name="TEMPLATE_CALL_ARGUMENTS_WRAP" value="5" />
+      <option name="TEMPLATE_CALL_ARGUMENTS_ALIGN_MULTILINE" value="true" />
+      <option name="CLASS_CONSTRUCTOR_INIT_LIST_WRAP" value="5" />
+      <option name="ALIGN_INIT_LIST_IN_COLUMNS" value="false" />
+      <option name="HEADER_GUARD_STYLE_PATTERN" value="${PROJECT_NAME}_${PROJECT_REL_PATH}_${FILE_NAME}_${EXT}_" />
+      <option name="NAMESPACES_NAMING_CONVENTION">
+        <value prefix="" style="SNAKE_CASE" suffix="" />
+      </option>
+      <option name="CLASSES_AND_STRUCTS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="ENUMS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="ENUMERATORS_NAMING_CONVENTION">
+        <value prefix="" style="SCREAMING_SNAKE_CASE" suffix="" />
+      </option>
+      <option name="TYPEDEFS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="UNIONS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="METHODS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="FIELDS_NAMING_CONVENTION">
+        <value prefix="" style="SNAKE_CASE" suffix="_" />
+      </option>
+      <option name="GLOBAL_FUNCTIONS_NAMING_CONVENTION">
+        <value prefix="" style="PASCAL_CASE" suffix="" />
+      </option>
+      <option name="GLOBAL_VARIABLES_NAMING_CONVENTION">
+        <value prefix="" style="SNAKE_CASE" suffix="" />
+      </option>
+      <option name="PARAMETERS_NAMING_CONVENTION">
+        <value prefix="" style="SNAKE_CASE" suffix="" />
+      </option>
+      <option name="LOCAL_VARIABLES_NAMING_CONVENTION">
+        <value prefix="" style="SNAKE_CASE" suffix="" />
+      </option>
+    </Objective-C>
+    <codeStyleSettings language="ObjectiveC">
+      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="1" />
+      <option name="BLANK_LINES_BEFORE_IMPORTS" value="0" />
+      <option name="BLANK_LINES_AFTER_IMPORTS" value="0" />
+      <option name="BLANK_LINES_AROUND_CLASS" value="0" />
+      <option name="BLANK_LINES_AROUND_METHOD" value="0" />
+      <option name="BLANK_LINES_AROUND_METHOD_IN_INTERFACE" value="0" />
+      <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="false" />
+      <option name="BINARY_OPERATION_SIGN_ON_NEXT_LINE" value="true" />
       <option name="FOR_STATEMENT_WRAP" value="1" />
-      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
       <option name="ASSIGNMENT_WRAP" value="1" />
-      <option name="ASSERT_STATEMENT_WRAP" value="5" />
-      <option name="IF_BRACE_FORCE" value="1" />
-      <option name="DOWHILE_BRACE_FORCE" value="1" />
-      <option name="WHILE_BRACE_FORCE" value="1" />
-      <option name="FOR_BRACE_FORCE" value="1" />
-      <option name="FIELD_ANNOTATION_WRAP" value="1" />
-      <option name="PARAMETER_ANNOTATION_WRAP" value="1" />
-      <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
-      <option name="ENUM_CONSTANTS_WRAP" value="2" />
-      <arrangement>
-        <rules>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PUBLIC>true</PUBLIC>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PROTECTED>true</PROTECTED>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PRIVATE>true</PRIVATE>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PUBLIC>true</PUBLIC>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PROTECTED>true</PROTECTED>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PRIVATE>true</PRIVATE>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <INITIALIZER_BLOCK>true</INITIALIZER_BLOCK>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PUBLIC>true</PUBLIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PROTECTED>true</PROTECTED>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <PRIVATE>true</PRIVATE>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PUBLIC>true</PUBLIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PROTECTED>true</PROTECTED>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <PRIVATE>true</PRIVATE>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <FIELD>true</FIELD>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <INITIALIZER_BLOCK>true</INITIALIZER_BLOCK>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>newInstance</NAME>
-                  <PUBLIC>true</PUBLIC>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <CONSTRUCTOR>true</CONSTRUCTOR>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <GETTER />
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <SETTER />
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onAttach</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onCreate</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onCreateView</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onViewCreated</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onActivityCreated</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onViewStateRestored</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onStart</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onResume</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onCreateOptionsMenu</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onPrepeareOptionsMenu</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onPause</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onSaveInstanceState</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onStop</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onRestart</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onDestroyView</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onDestroy</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onDetach</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>onActivityResult</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <METHOD>true</METHOD>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <FIELD>true</FIELD>
-                  <FINAL>true</FINAL>
-                  <NAME>CREATOR</NAME>
-                  <PUBLIC>true</PUBLIC>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <ENUM>true</ENUM>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <INTERFACE>true</INTERFACE>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <CLASS>true</CLASS>
-                  <STATIC>true</STATIC>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <CLASS>true</CLASS>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <CONSTRUCTOR>true</CONSTRUCTOR>
-                  <PROTECTED>true</PROTECTED>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>describeContents</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>writeToParcel</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <METHOD>true</METHOD>
-                  <NAME>toString</NAME>
-                  <OVERRIDDEN />
-                </AND>
-              </match>
-            </rule>
-          </section>
-        </rules>
-      </arrangement>
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+      </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="XML">
-      <option name="FORCE_REARRANGE_MODE" value="1" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="4" />
       </indentOptions>
@@ -671,6 +86,7 @@
               <match>
                 <AND>
                   <NAME>xmlns:android</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
@@ -681,6 +97,7 @@
               <match>
                 <AND>
                   <NAME>xmlns:.*</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
@@ -692,7 +109,8 @@
               <match>
                 <AND>
                   <NAME>.*:id</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
             </rule>
@@ -702,7 +120,8 @@
               <match>
                 <AND>
                   <NAME>.*:name</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
             </rule>
@@ -712,6 +131,7 @@
               <match>
                 <AND>
                   <NAME>name</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
@@ -722,6 +142,7 @@
               <match>
                 <AND>
                   <NAME>style</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
@@ -732,6 +153,7 @@
               <match>
                 <AND>
                   <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
@@ -742,53 +164,12 @@
             <rule>
               <match>
                 <AND>
-                  <NAME>.*:layout_width</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
+                  <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <NAME>.*:layout_height</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
-                </AND>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <NAME>.*:layout_.*</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
-                </AND>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <NAME>.*:width</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
-                </AND>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <NAME>.*:height</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
-                </AND>
-              </match>
-              <order>BY_NAME</order>
+              <order>ANDROID_ATTRIBUTE_ORDER</order>
             </rule>
           </section>
           <section>
@@ -796,17 +177,7 @@
               <match>
                 <AND>
                   <NAME>.*</NAME>
-                  <XML_NAMESPACE>\n\n                                        http://schemas.android.com/apk/res/android\n\n\n\n\n</XML_NAMESPACE>
-                </AND>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <AND>
-                  <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>.*</XML_NAMESPACE>
                 </AND>
               </match>
@@ -818,13 +189,6 @@
     </codeStyleSettings>
     <codeStyleSettings language="kotlin">
       <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
-      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
-      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
-      <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
-      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
-      </indentOptions>
     </codeStyleSettings>
   </code_scheme>
 </component>
