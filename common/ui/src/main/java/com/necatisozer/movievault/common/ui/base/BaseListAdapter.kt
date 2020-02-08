@@ -2,11 +2,10 @@ package com.necatisozer.movievault.common.ui.base
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import splitties.systemservices.layoutInflater
+import com.necatisozer.movievault.common.ui.extension.bindingInflate
 
 class BaseListAdapter<D : Any, B : ViewDataBinding>(
     @LayoutRes private val layoutId: Int,
@@ -15,7 +14,7 @@ class BaseListAdapter<D : Any, B : ViewDataBinding>(
 ) : ListAdapter<D, BaseViewHolder<D, B>>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<D, B> {
-        val viewBinding: B = DataBindingUtil.inflate(parent.layoutInflater, layoutId, parent, false)
+        val viewBinding: B = parent.bindingInflate(layoutId)
         return BaseViewHolder<D, B>(viewBinding).apply(viewHolderBlock)
     }
 
