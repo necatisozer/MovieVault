@@ -1,17 +1,13 @@
-package com.necatisozer.movievault.ui.main
+package com.necatisozer.movievault.dynamicfeature.home.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.necatisozer.movievault.R
+import com.necatisozer.movievault.dynamicfeature.home.R
 
-class MainFragment : Fragment(R.layout.main_fragment) {
+class HomeFragment : Fragment(R.layout.home_fragment) {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

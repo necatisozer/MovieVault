@@ -17,6 +17,7 @@ ext {
     constraint_layout_version = "2.0.0-beta4"
     fragment_version = "1.2.1"
     lifecycle_version = "2.2.0"
+    nav_version = "2.3.0-alpha01"
 
     // Various
     dagger_version = "2.26"

@@ -1,0 +1,13 @@
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.necatisozer.movievault.dynamicfeature.home">
+
+    <dist:module
+        dist:instant="true"
+        dist:title="@string/title_home">
+        <dist:delivery>
+            <dist:install-time />
+        </dist:delivery>
+        <dist:fusing dist:include="false" />
+    </dist:module>
+</manifest>
+
