@@ -1,0 +1,6 @@
+ext {
+    app_id = "com.necatisozer.movievault"
+    app_version = [major: 2, minor: 0, patch: 0, build: 0]
+    version_code = app_version.major * 10**6 + app_version.minor * 10**4 + app_version.patch * 10**2 + app_version.build
+    version_name = "${app_version.major}.${app_version.minor}.${app_version.patch}"
+}
