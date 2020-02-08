@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
@@ -53,6 +55,10 @@ dependencies {
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"
     api "androidx.navigation:navigation-ui-ktx:$nav_version"
     api "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     // Test
     testImplementation "junit:junit:$junit_version"
