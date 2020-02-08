@@ -1,2 +1,2 @@
-include ":app",":core", ":dynamicfeature:home"
-rootProject.name="Movie Vault"
+include ":app", ":core", ":common:ui", ":dynamicfeature:home"
+rootProject.name = "Movie Vault"

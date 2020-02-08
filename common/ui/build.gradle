@@ -1,0 +1,32 @@
+apply from: "$rootDir/android-library.gradle"
+
+dependencies {
+    // AndroidX
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+
+    // Splitties
+    api "com.louiscad.splitties:splitties-activities:$splitties_version"
+    api "com.louiscad.splitties:splitties-appctx:$splitties_version"
+    api "com.louiscad.splitties:splitties-bundle:$splitties_version"
+    api "com.louiscad.splitties:splitties-checkedlazy:$splitties_version"
+    api "com.louiscad.splitties:splitties-fragments:$splitties_version"
+    api "com.louiscad.splitties:splitties-fragmentargs:$splitties_version"
+    api "com.louiscad.splitties:splitties-mainthread:$splitties_version"
+    api "com.louiscad.splitties:splitties-permissions:$splitties_version"
+    api "com.louiscad.splitties:splitties-resources:$splitties_version"
+    api "com.louiscad.splitties:splitties-snackbar:$splitties_version"
+    api "com.louiscad.splitties:splitties-systemservices:$splitties_version"
+    api "com.louiscad.splitties:splitties-toast:$splitties_version"
+    api "com.louiscad.splitties:splitties-views:$splitties_version"
+    api "com.louiscad.splitties:splitties-views-appcompat:$splitties_version"
+    api "com.louiscad.splitties:splitties-views-cardview:$splitties_version"
+    api "com.louiscad.splitties:splitties-views-material:$splitties_version"
+    api "com.louiscad.splitties:splitties-views-recyclerview:$splitties_version"
+
+    // Various
+    implementation "io.coil-kt:coil:$coil_version"
+}
