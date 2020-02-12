@@ -12,6 +12,10 @@
                         <option value="$PROJECT_DIR$/common" />
                         <option value="$PROJECT_DIR$/common/ui" />
                         <option value="$PROJECT_DIR$/core" />
+                        <option value="$PROJECT_DIR$/data" />
+                        <option value="$PROJECT_DIR$/data/localdatasource" />
+                        <option value="$PROJECT_DIR$/data/remotedatasource" />
+                        <option value="$PROJECT_DIR$/data/repository" />
                         <option value="$PROJECT_DIR$/dynamicfeature" />
                         <option value="$PROJECT_DIR$/dynamicfeature/home" />
                     </set>

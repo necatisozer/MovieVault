@@ -1,2 +1,9 @@
-include ":app", ":core", ":common:ui", ":dynamicfeature:home"
+include ":app", ":core", ":common:ui"
+
+include ":data:repository",
+        ":data:remotedatasource",
+        ":data:localdatasource"
+
+include ":dynamicfeature:home"
+
 rootProject.name = "Movie Vault"

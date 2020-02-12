@@ -1,0 +1,6 @@
+apply from: "$rootDir/android-library.gradle"
+
+dependencies {
+    implementation(project(":data:remotedatasource"))
+    implementation(project(":data:localdatasource"))
+}
